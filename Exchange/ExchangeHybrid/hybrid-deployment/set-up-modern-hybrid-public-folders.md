@@ -65,7 +65,7 @@ An Exchange Online, Microsoft 365, or Office 365 user must be represented by a M
 
     > [!NOTE]
     > The download package at this location contains additional files. To follow the instructions in this article, you only need the two listed above.
-    > These scripts now support Modern Authentication.
+    > These scripts now support modern authentication.
 
 2. Save the files to the local computer on which you'll be running PowerShell. For example, C:\PFScripts.
 
