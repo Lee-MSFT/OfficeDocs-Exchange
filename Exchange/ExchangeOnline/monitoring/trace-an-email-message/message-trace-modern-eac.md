@@ -122,10 +122,12 @@ When you use **Message ID** to filter the results, be sure to include the full s
 
 #### Network Message ID
 
-Network Message ID is a unique message ID value assigned to the specific instance of an email message. Therefore, every email message will have many network message IDs. The Network Message ID for each instance of the email message persists across the message transport cycle.
+When tracing messages in Exchange, you may at times need to locate a specific instance of a message. For example, when analyzing message threads or messages sent to distribution groups for troubleshooting non-delivery reports, mail flow or filtering issues. The values assigned to such specific instances of email messages are known as Network Message IDs.
+
+Network Message ID is assigned to all types of messages, and they persist across the message transport cycle, that is, from the time the message is sent till it's delivered.
 
 > [!NOTE]
-> The Network Message ID is differs for the copied version of the instance. Therefore, each copied version of the instance will have a different Network Message ID.
+> The Network Message ID unlike the "Message ID" attribute is very dynamic and differs even for the copy of the message's specific instance. Therefore, each copied version of the instance will have a different Network Message ID.
 
 The difference between Network Message ID and Message-ID is described in the following table: in that Network Message ID is the value of the message's specific component whereas the
 
