@@ -154,14 +154,13 @@ For example, **09a31c59-8e1b-45bc-63e0-08d6eba0a07b** can be the value for Netwo
 
 **Example 2**:
 
+Exchange Online's cmdlets **Get-MessageTrace** and **Get-MessageTraceDetail** use a parameter named **-MessageTraceId** to exchange message trace information. This parameter is corresponding to the **Network Message ID** parameter.
+
+An example of this scenario is the following command:
+
 `Get-MessageTrace -MessageTraceId 2bbad36aa4674c7ba82f4b307fff549f -SenderAddress john@contoso.com -StartDate 06/13/2022 -EndDate 06/15/2022 | Get-MessageTraceDetail`
 
-The above command is described below:
- 
-The Exchange Online cmdlets [Get-MessageTrace](/powershell/module/exchange/get-messagetrace) and [Get-MessageTraceDetail](/powershell/module/exchange/get-messagetracedetail) retrieves trace information for messages that have the Network Message ID value **2bbad36aa4674c7ba82f4b307fff549f** value and that are sent by john@contoso.com between June 13, 2022 and June 15, 2022. The `Get-MessageTrace` cmdlet then pipelines the retrieved trace information to the `Get-MessageTraceDetail` cmdlet.
-
-> [!NOTE]
->  The `-MessageTraceId` parameter, which has the value **2bbad36aa4674c7ba82f4b307fff549f**, is the corresponding parameter for "Network Message ID". So, this parameter to be looked for when the objective is to trace the Network Message ID of the message.
+In this command, the **Get-MessageTrace** cmdlet retrieves trace information for messages that have the Network Message ID value **2bbad36aa4674c7ba82f4b307fff549f** value and that are sent by john@contoso.com between June 13, 2022 and June 15, 2022. It then pipelines the retrieved trace information to the `Get-MessageTraceDetail` cmdlet.
 
 #### Direction
 
