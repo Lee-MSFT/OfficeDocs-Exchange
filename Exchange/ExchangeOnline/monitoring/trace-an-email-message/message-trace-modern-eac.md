@@ -55,7 +55,7 @@ Also on this page is a **Downloadable reports** section for the requests you've 
 
 The default values are **All** for **Senders** and **All** for **Recipients**, but you can use those fields to filter the results:
 
-- **Senders**: Click in this box and start typing to enter or select one more senders from your organization.
+- **Senders**: Click in this box and start typing to enter or select one or more senders from your organization.
 
 - **Recipients**: Click in this box and start typing to enter or select one more recipient in your organization.
 
@@ -101,7 +101,7 @@ You can leave the default value **All** selected, or you can select one of the f
 
 - **Failed**: The message wasn't delivered.
 
-- **Pending**: Delivery of the message is being attempted or re-attempted.
+- **Pending**: Delivery of the message is being attempted or reattempted.
 
 - **Quarantined**: The message was quarantined (as spam, bulk mail, or phishing). For more information, see [Quarantined email messages in EOP](/microsoft-365/security/office-365-security/quarantine-email-messages).
 
@@ -122,7 +122,7 @@ When you use **Message ID** to filter the results, be sure to include the full s
 
 #### Network Message ID
 
-There are situations in which messages are traced to navigate to the specific instance of a message, for example, when analyzing message threads or messages sent to distribution groups for troubleshooting non-delivery reports, mail flow or filtering issues. You can locate such specific instances of a message by looking at the "Network Message ID".
+There are situations in which messages are traced to navigate to the specific instance of a message, for example, when analyzing message threads. You can locate such specific instances of a message with the help of a parameter named "Network Message ID".
 
 Network Message ID is an attribute that is assigned to all types of messages, and they persist across the message transport cycle.
 
@@ -134,9 +134,9 @@ The difference between Network Message ID and Message ID is described in the fol
 |Network Message ID  |Message ID  |
 |---------|---------|
 |ID of an email message's specific instance   |ID of the email message        |
-|Unique and persists across copies of the message that may be created due to bifurcation or distribution group expansion       |   Constant for the lifetime of the message      |
+|Unique and persists across copies of the message that may be created due to bifurcation        |   Constant for the lifetime of the message      |
 
-For more information on Network Message ID, see [message tracking logs](../../../ExchangeServer/mail-flow/transport-logs/message-tracking.md) in Exchange Servers; the [message headers](https://support.microsoft.com/office/view-internet-message-headers-in-outlook-cd039382-dc6e-4264-ac74-c048563d212c) in Outlook.
+For more information on Network Message ID, see [message tracking logs](../../../ExchangeServer/mail-flow/transport-logs/message-tracking.md) in Exchange Servers; [contents of email headers; Interpreting email headers](https://support.microsoft.com/office/view-internet-message-headers-in-outlook-cd039382-dc6e-4264-ac74-c048563d212c) in Outlook.
 
 ##### Examples of commands
 
@@ -154,9 +154,9 @@ For example, **09a31c59-8e1b-45bc-63e0-08d6eba0a07b** can be the value for Netwo
 
 **Example 2**:
 
-Exchange Online's cmdlets **Get-MessageTrace** and **Get-MessageTraceDetail** use a parameter named **-MessageTraceId** to exchange message trace information. This parameter is corresponding to the **Network Message ID** parameter.
+Exchange Online's cmdlets **Get-MessageTrace** and **Get-MessageTraceDetail** exchange message trace information with the help of a parameter named **-MessageTraceId**, a parameter corresponding to the **Network Message ID** parameter.
 
-An example of this scenario is the following command:
+This scenario is illustrated in the following command:
 
 `Get-MessageTrace -MessageTraceId 2bbad36aa4674c7ba82f4b307fff549f -SenderAddress john@contoso.com -StartDate 06/13/2022 -EndDate 06/15/2022 | Get-MessageTraceDetail`
 
@@ -245,7 +245,7 @@ The message trace details contain the following additional information that's no
   - **Deliver**: The message was delivered to a mailbox.
   - **Expand**: The message was sent to a distribution group that was expanded.
   - **Transfer**: Recipients were moved to a bifurcated message because of content conversion, message recipient limits, or agents.
-  - **Defer**: The message delivery was postponed and might be re-attempted later.
+  - **Defer**: The message delivery was postponed and might be reattempted later.
   - **Resolved**: The message was redirected to a new recipient address based on an Active Directory look up. When this event happens, the original recipient address is listed in a separate row in the message trace along with the final delivery status for the message.
   - **DLP rule**: The message had a DLP rule match in this message.
   - **Sensitivity label:** A server-side labeling event occurred. For example, a label was automatically added to a message that includes an action to encrypt or was added via the web or mobile client. This action is completed by the Exchange server and logged. A label added via Outlook won't be included in the event field.
