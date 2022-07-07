@@ -124,7 +124,7 @@ When you use **Message ID** to filter the results, be sure to include the full s
 
 There are situations in which messages are traced to navigate to the specific instance of a message, for example, when analyzing message threads. You can locate such specific instances of a message with the help of a parameter named "Network Message ID".
 
-Network Message ID is an attribute that is assigned to all types of messages, and they persist across the message transport cycle.
+Network message ID is a unique message ID value that persists across all copies of the message that might be created due to bifurcation. It's an attribute applicable and assigned to all types of messages. It persists across the message transport cycle.
 
 > [!NOTE]
 > The Network Message ID unlike the "Message ID" attribute is very dynamic and differs even for the copy of the message's specific instance. Therefore, each copied version of the instance will have a different Network Message ID.
