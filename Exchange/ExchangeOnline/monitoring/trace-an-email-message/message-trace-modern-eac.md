@@ -134,9 +134,7 @@ You can locate Network Message ID in the following locations:
 
 For example, you can locate Network Message ID with the help of the following message hearders in Exchange Online:
 
-- `X-MS-Exchange-Organization-Network-Message-Id`
-
-             OR
+- `X-MS-Exchange-Organization-Network-Message-Id`, or
 
 - `X-MS-Exchange-CrossTenant-Network-Message-Id`
 
