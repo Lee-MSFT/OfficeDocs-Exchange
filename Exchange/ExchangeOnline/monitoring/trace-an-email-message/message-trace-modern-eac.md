@@ -132,7 +132,7 @@ You can locate Network Message ID in the following locations:
 - In [Enhanced message trace reports](message-trace-modern-eac.md) in Exchange Online
 - By inspecting [message headers](https://support.microsoft.com/en-us/office/view-internet-message-headers-in-outlook-cd039382-dc6e-4264-ac74-c048563d212c) from Outlook
 
-For example, you can locate Network Message ID with the help of the following message hearders in Exchange Online:
+For example, you can locate Network Message ID with the help of the following message headers in Exchange Online:
 
 - `X-MS-Exchange-Organization-Network-Message-Id`, or
 
