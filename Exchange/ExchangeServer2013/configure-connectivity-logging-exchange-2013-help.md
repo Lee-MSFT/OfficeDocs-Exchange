@@ -73,13 +73,10 @@ Set-TransportService Mailbox01 -ConnectivityLogPath "D:\Hub Connectivity Log" -C
 ```
 
 > [!NOTE]
-> <UL>
-> <LI>
-> <P>To configure the connectivity log settings in the Mailbox Transport service on a Mailbox server, use the <STRONG>Set-MailboxTransportService</STRONG> cmdlet. To configure the connectivity log settings in the Front End Transport service on a Client Access server, use the <STRONG>Set-FrontEndTransportService</STRONG> cmdlet.</P>
-> <LI>
-> <P>Setting the <EM>ConnectivityLogPath</EM> parameter to the value <CODE>$null</CODE>, effectively disables connectivity logging. However, if the value of the <EM>ConnectivityLogEnabled</EM> parameter is <CODE>$true</CODE>, event log errors are generated.</P>
-> <LI>
-> <P>Setting the <EM>ConnectivityLogMaxAge</EM> parameter to the value <CODE>00:00:00</CODE> prevents the automatic removal of connectivity log files because of their age.</P></LI></UL>
+>
+> - To configure the connectivity log settings in the Mailbox Transport service on a Mailbox server, use the **Set-MailboxTransportService** cmdlet. To configure the connectivity log settings in the Front End Transport service on a Client Access server, use the **Set-FrontEndTransportService** cmdlet.
+> - Setting the _ConnectivityLogPath_ parameter to the value `$null`, effectively disables connectivity logging. However, if the value of the _ConnectivityLogEnabled_ parameter is `$true`, event log errors are generated.
+> - Setting the _ConnectivityLogMaxAge_ parameter to the value `00:00:00` prevents the automatic removal of connectivity log files because of their age.
 
 ## How do you know this worked?
 

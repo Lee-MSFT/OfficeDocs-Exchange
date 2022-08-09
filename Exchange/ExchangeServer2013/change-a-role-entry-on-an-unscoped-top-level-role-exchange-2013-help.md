@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Admins can learn how to change role entries on unscoped top-level roles in Exchange Server.
 ---
 
 # Change a role entry on an unscoped top-level role
@@ -21,7 +22,7 @@ _**Applies to:** Exchange Server 2013_
 Management role entries on unscoped top-level management roles refer to the scripts and non-Exchange cmdlets, and their parameters, that you want to make available to those assigned the role. By changing the parameters available on a role entry, you control what those assigned the role can do with the script or non-Exchange cmdlet. For more information about unscoped role entries, see [Understanding management roles](understanding-management-roles-exchange-2013-help.md).
 
 > [!NOTE]
-> If you want to change a role entry on a management role that contains Exchange cmdlets, see <A href="change-a-role-entry-exchange-2013-help.md">Change a role entry</A>.
+> If you want to change a role entry on a management role that contains Exchange cmdlets, see [Change a role entry](change-a-role-entry-exchange-2013-help.md).
 
 Looking for other management tasks related to roles? Check out [Advanced permissions](advanced-permissions-exchange-2013-help.md).
 
@@ -48,11 +49,11 @@ Looking for other management tasks related to roles? Check out [Advanced permiss
 
 To add parameters to an unscoped top-level role entry, you need to do the following:
 
-- Specify the parameters you want to add using the *Parameters* parameter.
+- Specify the parameters you want to add using the _Parameters_ parameter.
 
-- Specify the *AddParameter* parameter to indicate that you want to perform an add operation.
+- Specify the _AddParameter_ parameter to indicate that you want to perform an add operation.
 
-- Specify the *UnscopedTopLevel* parameter to indicate that you're changing a role entry on an unscoped top-level role. If you don't specify this parameter when you change a role entry on an unscoped role, an error occurs.
+- Specify the _UnscopedTopLevel_ parameter to indicate that you're changing a role entry on an unscoped top-level role. If you don't specify this parameter when you change a role entry on an unscoped role, an error occurs.
 
 To add parameters to a role entry, use the following syntax.
 
@@ -60,7 +61,7 @@ To add parameters to a role entry, use the following syntax.
 Set-ManagementRoleEntry <role name>\<script or non-Exchange cmdlet> -Parameters <parameter 1>, <parameter 2>, <parameter...> -AddParameter -UnscopedTopLevel
 ```
 
-This example adds the *EmailAddress* and *City* parameters to the **CreateUsers.ps1** script on the Recipient Administrators unscoped role.
+This example adds the _EmailAddress_ and _City_ parameters to the **CreateUsers.ps1** script on the Recipient Administrators unscoped role.
 
 ```powershell
 Set-ManagementRoleEntry "Recipient Administrators\CreateUsers.ps1" -Parameters EmailAddress, City -AddParameter -UnscopedTopLevel
@@ -72,11 +73,11 @@ For detailed syntax and parameter information, see [Set-ManagementRoleEntry](/po
 
 To remove parameters from a role entry, you need to do the following:
 
-- Specify the parameters you want to remove using the *Parameters* parameter.
+- Specify the parameters you want to remove using the _Parameters_ parameter.
 
-- Specify the *RemoveParameter* parameter to indicate that you want to perform a remove operation.
+- Specify the _RemoveParameter_ parameter to indicate that you want to perform a remove operation.
 
-- Specify the *UnscopedTopLevel* parameter to indicate that you're changing a role entry on an unscoped top-level role. If you don't specify this parameter when you change a role entry on an unscoped role, an error occurs.
+- Specify the _UnscopedTopLevel_ parameter to indicate that you're changing a role entry on an unscoped top-level role. If you don't specify this parameter when you change a role entry on an unscoped role, an error occurs.
 
 > [!WARNING]
 > You can't undo remove operations. If you mistakenly remove a parameter from a role entry, you must add it again manually.
@@ -87,7 +88,7 @@ To remove parameters from a role entry, use the following syntax.
 Set-ManagementRoleEntry <role name>\<script or non-Exchange cmdlet> -Parameters <parameter 1>, <parameter 2>, <parameter...> -RemoveParameter -UnscopedTopLevel
 ```
 
-This example removes the *Delay*, *Force*, and *Credential* parameters from the **Start-Widget** non-Exchange cmdlet on the Tier 1 Server Administrators role.
+This example removes the _Delay_, _Force_, and _Credential_ parameters from the **Start-Widget** non-Exchange cmdlet on the Tier 1 Server Administrators role.
 
 ```powershell
 Set-ManagementRoleEntry "Tier 1 Server Administrators\Start-Widget" -Parameters Delay, Force, Credential -RemoveParameter -UnscopedTopLevel
@@ -99,9 +100,9 @@ For detailed syntax and parameter information, see [Set-ManagementRoleEntry](/po
 
 To remove all of the parameters from a role entry, you need to do the following:
 
-- Specify the value `$Null` on the *Parameters* parameter. You don't need to include the *RemoveParameter* parameter.
+- Specify the value `$Null` on the _Parameters_ parameter. You don't need to include the _RemoveParameter_ parameter.
 
-- Specify the *UnscopedTopLevel* parameter to indicate that you're changing a role entry on an unscoped top-level role. If you don't specify this parameter when you change a role entry on an unscoped role, an error occurs.
+- Specify the _UnscopedTopLevel_ parameter to indicate that you're changing a role entry on an unscoped top-level role. If you don't specify this parameter when you change a role entry on an unscoped role, an error occurs.
 
 Removing all the parameters from a role entry is most useful when you want to make only a few parameters available on a script or non-Exchange cmdlet and exclude all of the other parameters.
 
@@ -128,12 +129,12 @@ For detailed syntax and parameter information, see [Set-ManagementRoleEntry](/po
 
 If you want only a specific set of parameters to be included on a role entry, you need to do the following:
 
-- Specify the *Parameters* parameter only. Don't include the *AddParameter* or *RemoveParameter* parameters.
+- Specify the _Parameters_ parameter only. Don't include the _AddParameter_ or _RemoveParameter_ parameters.
 
-- Specify the *UnscopedTopLevel* parameter to indicate that you're changing a role entry on an unscoped role. If you don't specify this parameter when you change a role entry on an unscoped top-level role, an error occurs.
+- Specify the _UnscopedTopLevel_ parameter to indicate that you're changing a role entry on an unscoped role. If you don't specify this parameter when you change a role entry on an unscoped top-level role, an error occurs.
 
 > [!WARNING]
-> When you specify only the <EM>Parameters</EM> parameter, only the parameters you specify in the command are included on the role entry. All other parameters are removed.
+> When you specify only the _Parameters_ parameter, only the parameters you specify in the command are included on the role entry. All other parameters are removed.
 
 To specify a specific set of parameters, use the following syntax.
 
@@ -141,7 +142,7 @@ To specify a specific set of parameters, use the following syntax.
 Set-ManagementRoleEntry <role name>\<script or non-Exchange cmdlet> -Parameters <parameter 1>, <parameter 2>, <parameter...> -UnscopedTopLevel
 ```
 
-This example includes only the *Alias*, *DisplayName*, *WidgetConfig*, and *Enabled* parameters on the **Set-Widget** cmdlet on the Seattle Mail Recipient Admins role.
+This example includes only the _Alias_, _DisplayName_, _WidgetConfig_, and _Enabled_ parameters on the **Set-Widget** cmdlet on the Seattle Mail Recipient Admins role.
 
 ```powershell
 Set-ManagementRoleEntry "Seattle Mail Recipient Admins\Set-UMMailbox" -Parameters Alias, DisplayName, WidgetConfig, Enabled -UnscopedTopLevel

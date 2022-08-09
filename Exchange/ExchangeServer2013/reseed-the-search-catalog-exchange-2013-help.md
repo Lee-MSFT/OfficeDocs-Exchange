@@ -21,30 +21,9 @@ _**Applies to:** Exchange Server 2013_
 
 If the content index catalog for a mailbox database copy gets corrupted, you may need to reseed the catalog. Corrupted content indexes are indicated in the Application event log by the following event.
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Event ID</th>
-<th>Level</th>
-<th>Source</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>123</p></td>
-<td><p>Error</p></td>
-<td><p>ExchangeStoreDB</p></td>
-<td><p>At &lt;<em>timestamp</em>&gt; the Microsoft Exchange Information Store Database &lt;<em>identity</em>&gt; copy on this server experienced a corrupted search catalog. Consult the event log on the server for other &quot;ExchangeStoreDb&quot; and &quot;MSExchange Search Indexer&quot; events for more specific information about the failure. Reseeding the catalog is recommended via the 'Update-MailboxDatabaseCopy' task.</p></td>
-</tr>
-</tbody>
-</table>
+|Event ID|Level|Source|Details|
+|---|---|---|---|
+|123|Error|ExchangeStoreDB|At \<_timestamp_\> the Microsoft Exchange Information Store Database \<_identity_\> copy on this server experienced a corrupted search catalog. Consult the event log on the server for other "ExchangeStoreDb" and "MSExchange Search Indexer" events for more specific information about the failure. Reseeding the catalog is recommended via the 'Update-MailboxDatabaseCopy' task.|
 
 If the mailbox database copy is located on a server that is part of a database availability group (DAG), you can reseed the content index catalog from another DAG member.
 
@@ -100,7 +79,7 @@ If there is only one copy of the mailbox database, you have to manually reseed t
     Stop-Service HostControllerService
     ```
 
-2. Delete, move, or rename the folder that contains the Exchange content index catalog. This folder is named `%ExchangeInstallPath\Mailbox\<name of mailbox database>_Catalog\<GUID>12.1.Single`. For example, you might rename the folder `C:\Program Files\Microsoft\Exchange Server\V15\Mailbox\Mailbox Database 0657134726_Catalog\F0627A72-9F1D-494A-839A-D7C915C279DB12.1.Single_OLD`.
+2. Delete, move, or rename the folder that contains the Exchange content index catalog. This folder is named `%ExchangeInstallPath%Mailbox\<name of mailbox database>_Catalog\<GUID>12.1.Single`. For example, you might rename the folder `C:\Program Files\Microsoft\Exchange Server\V15\Mailbox\Mailbox Database 0657134726_Catalog\F0627A72-9F1D-494A-839A-D7C915C279DB12.1.Single_OLD`.
 
     > [!NOTE]
     > Deleting this folder will make additional disk space available. Alternatively, you might want to rename or move the folder to keep it for troubleshooting purposes.
@@ -125,4 +104,4 @@ It might take a while for Exchange Search to reseed the content index catalog. R
 Get-MailboxDatabaseCopyStatus | FL Name,*Index*
 ```
 
-When the reseeding of the search catalog is in progress, the value of the *ContentIndexState* property is **Crawling**. When the reseeding is complete, this value is changed to **Healthy**.
+When the reseeding of the search catalog is in progress, the value of the _ContentIndexState_ property is **Crawling**. When the reseeding is complete, this value is changed to **Healthy**.

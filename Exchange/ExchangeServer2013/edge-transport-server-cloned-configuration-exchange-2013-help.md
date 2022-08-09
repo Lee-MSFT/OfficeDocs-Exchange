@@ -23,7 +23,7 @@ Edge Transport servers store their configuration information in Active Directory
 
 To ensure all Edge Transport servers use the same configuration information, use the provided cloned configuration scripts to duplicate your source server's configuration on a target server.
 
-*Cloned configuration_ is used to deploy new Edge Transport servers based on a configured source server. Source server configuration information is duplicated and then exported to an XML file. The XML file is then imported to the target server.
+_Cloned configuration_ is used to deploy new Edge Transport servers based on a configured source server. Source server configuration information is duplicated and then exported to an XML file. The XML file is then imported to the target server.
 
 This topic provides an overview of the cloned configuration process. For detailed steps about configuring your Edge Transport servers using cloned configuration, see [Configure Edge Transport server using cloned configuration](configure-edge-transport-server-using-cloned-configuration-exchange-2013-help.md).
 
@@ -147,7 +147,7 @@ The attributes in the following table are associated with the transport configur
 |**MaxRecipientEnvelopeLimit**|This attribute specifies the maximum number of recipients that are allowed in a single email message. This attribute doesn't apply to the configuration of an Edge Transport server.|5,000|
 |**MaxSendSize**|This attribute specifies the maximum message size that can be sent by senders in the organization. This attribute doesn't apply to the configuration of an Edge Transport server.|10 MB|
 |**TLSReceiveDomainSecureList**|This attribute specifies the remote domains that will use mutual Transport Layer Security (TLS) authentication through Receive connectors configured to support Domain Security. Multiple domains may be separated by commas. The wildcard character (\*) isn't supported in the domains that are listed in this attribute.|Null|
-|**TLSSendDomainSecureList**|This attribute specifies the remote domains that will use mutual TLS authentication when email is sent through a Send connector configured to support Domain Security and the address space of the target domain. Multiple domains may be separated by commas. The wildcard character (*) isn't supported in the domains that are listed in this attribute.|Null|
+|**TLSSendDomainSecureList**|This attribute specifies the remote domains that will use mutual TLS authentication when email is sent through a Send connector configured to support Domain Security and the address space of the target domain. Multiple domains may be separated by commas. The wildcard character (\*) isn't supported in the domains that are listed in this attribute.|Null|
 |**VerifySecureSubmitEnabled**|This attribute verifies that email clients that are submitting messages from mailboxes on Mailbox servers are using encrypted MAPI submission. This attribute doesn't apply to the configuration of an Edge Transport server. The valid values for this attribute are `$true` or `$false`.|False|
 |**VoicemailJournalingEnabled**|This attribute specifies whether Unified Messaging voice mail is journaled by the Journaling agent. This attribute doesn't apply to the configuration of an Edge Transport server.|True|
 

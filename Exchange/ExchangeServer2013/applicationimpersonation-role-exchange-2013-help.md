@@ -31,7 +31,7 @@ For example, you might see these roles in the Exchange admin center:
 >
 > To prevent an application that uses the **ApplicationImpersonation** role from accessing a mailbox or performing tasks on its behalf after its user account has been disabled, do one or more of the following:
 >
-> - Disable or remove the user in the third-party application.</P>
+> - Disable or remove the user in the third-party application.
 > - Delete the mailbox.
 
 ## Default management role assignments

@@ -148,7 +148,7 @@ When you run the **Search-AdminAuditLog** cmdlet, all the audit log entries that
 
 - **Successful completion**: Specifies whether only administrator audit log entries that indicated a success or failure should be returned.
 
-Each audit log entry returned contains the information described in the table in Audit Log Contents. By default, only the first 1,000 log entries that match the criteria you specify are returned. However, you can override this default and return more or fewer entries using the *ResultSize* parameter. You can specify a value of `Unlimited` with the *ResultSize* parameter to return all log entries that match the specified criteria.
+Each audit log entry returned contains the information described in the table in Audit Log Contents. By default, only the first 1,000 log entries that match the criteria you specify are returned. However, you can override this default and return more or fewer entries using the _ResultSize_ parameter. You can specify a value of `Unlimited` with the _ResultSize_ parameter to return all log entries that match the specified criteria.
 
 For information about how to use the **Search-AdminAuditLog** cmdlet, see [Search the role group changes or administrator audit logs](../ExchangeOnline/security-and-compliance/exchange-auditing-reports/search-role-group-changes.md).
 
@@ -161,7 +161,7 @@ You can use the same search criteria with the **New-AdminAuditLogSearch** cmdlet
 After you run the **New-AdminAuditLogSearch** cmdlet, Exchange may take up to 15 minutes to deliver the report to the specified recipient. The XML file attached report can be a maximum of 10 megabytes (MB). The XML file contains the same information described in the table in Audit Log Contents. For more information about the structure of the XML file, see [Administrator audit log structure](administrator-audit-log-structure-exchange-2013-help.md).
 
 > [!NOTE]
-> Outlook Web App doesn't allow you to open XML attachments by default. You can either configure Exchange to allow XML attachments to be viewed using Outlook Web App, or you can use another email client, such as Microsoft Outlook, to view the attachment. For information about how to configure Outlook Web App to allow you to view an XML attachment, see <A href="view-or-configure-outlook-web-app-virtual-directories-exchange-2013-help.md">View or configure Outlook Web App virtual directories</A>.
+> Outlook Web App doesn't allow you to open XML attachments by default. You can either configure Exchange to allow XML attachments to be viewed using Outlook Web App, or you can use another email client, such as Microsoft Outlook, to view the attachment. For information about how to configure Outlook Web App to allow you to view an XML attachment, see [View or configure Outlook Web App virtual directories](view-or-configure-outlook-web-app-virtual-directories-exchange-2013-help.md).
 
 For information about how to use the **New-AdminAuditLogSearch** cmdlet, see [Search the role group changes or administrator audit logs](../ExchangeOnline/security-and-compliance/exchange-auditing-reports/search-role-group-changes.md).
 

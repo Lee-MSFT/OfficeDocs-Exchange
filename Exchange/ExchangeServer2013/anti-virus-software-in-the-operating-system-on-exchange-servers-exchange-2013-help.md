@@ -45,13 +45,13 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Mailbox databases**
 
-    - Exchange databases, checkpoint files, and log files. By default, these are located in sub-folders under the %ExchangeInstallPath%Mailbox folder. To determine the location of a mailbox database, transaction log, and checkpoint file, run the following command: `Get-MailboxDatabase -Server <servername>| Format-List _path*`
+    - Exchange databases, checkpoint files, and log files. By default, these are located in sub-folders under the %ExchangeInstallPath%Mailbox folder. To determine the location of a mailbox database, transaction log, and checkpoint file, run the following command: `Get-MailboxDatabase -Server <servername>| Format-List *path*`
 
     - Database content indexes. By default, these are located in the same folder as the database file.
 
     - Group Metrics files. By default, these files are located in the %ExchangeInstallPath%GroupMetrics folder.
 
-    - General log files, such as message tracking and calendar repair log files. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs folder and %ExchangeInstallPath%Logging folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-MailboxServer <servername> | Format-List _path*`
+    - General log files, such as message tracking and calendar repair log files. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs folder and %ExchangeInstallPath%Logging folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-MailboxServer <servername> | Format-List *path*`
 
     - The Offline Address Book files. By default, these are located in subfolders under the %ExchangeInstallPath%ClientAccess\\OAB folder.
 
@@ -67,9 +67,9 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Transport service**
 
-    - Log files, for example, message tracking and connectivity logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-TransportService <servername> | Format-List _logpath*,*tracingpath*`
+    - Log files, for example, message tracking and connectivity logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-TransportService <servername> | Format-List *logpath*,*tracingpath*`
 
-    - Pickup and Replay message directory folders. By default, these folders are located under the %ExchangeInstallPath%TransportRoles folder. To determine the paths being used, run the following command in the Exchange Management Shell: `Get-TransportService <servername>| Format-List _dir*path*`
+    - Pickup and Replay message directory folders. By default, these folders are located under the %ExchangeInstallPath%TransportRoles folder. To determine the paths being used, run the following command in the Exchange Management Shell: `Get-TransportService <servername>| Format-List *dir*path*`
 
     - The queue databases, checkpoints, and log files. By default, these are located in the %ExchangeInstallPath%TransportRoles\\Data\\Queue folder.
 
@@ -79,13 +79,13 @@ You must exclude specific directories for each Exchange server on which you run 
 
       - By default, content conversions are performed in the Exchange server's %TMP% folder.
 
-      - By default, rich text format (RTF) to MIME/HTML conversions are performed in %ExchangeInstallPath%\\Working\\OleConverter folder.
+      - By default, rich text format (RTF) to MIME/HTML conversions are performed in %ExchangeInstallPath%Working\\OleConverter folder.
 
     - The content scanning component is used by the Malware agent and data loss prevention (DLP). By default, these files are located in the %ExchangeInstallPath%FIP-FS folder.
 
   - **Mailbox Transport service**
 
-    - Log files, for example, connectivity logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs\\Mailbox folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-MailboxTransportService <servername> | Format-List _logpath*`
+    - Log files, for example, connectivity logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs\\Mailbox folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-MailboxTransportService <servername> | Format-List *logpath*`
 
   - **Unified Messaging**
 
@@ -103,7 +103,7 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Exchange Search service**
 
-    - Temporary files used by the Exchange Search service and Microsoft Filter Pack to perform file conversion in a sandboxed environment. These files are located in %SystemRoot%\\Temp\\OICE\___\<GUID\>_\\.
+    - Temporary files used by the Exchange Search service and Microsoft Filter Pack to perform file conversion in a sandboxed environment. These files are located in %SystemRoot%\\Temp\\OICE\_\\<GUID\>\\.
 
 - **Client Access servers**
 
@@ -125,7 +125,7 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Front End Transport service**
 
-    - Log files, for example, connectivity logs and protocol logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs\\FrontEnd folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-FrontEndTransportService <servername> | Format-List _logpath*`
+    - Log files, for example, connectivity logs and protocol logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs\\FrontEnd folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-FrontEndTransportService <servername> | Format-List *logpath*`
 
   - **Setup**
 
@@ -189,53 +189,33 @@ Many file-level scanners now support the scanning of processes, which can advers
 In addition to excluding specific directories and processes, you should exclude the following Exchange-specific file name extensions in case directory exclusions fail or files are moved from their default locations.
 
 - Application-related extensions:
-
   - .config
-
   - .dia
-
   - .wsb
 
 - Database-related extensions:
-
   - .chk
-
   - .edb
-
   - .jrs
-
   - .jsl
-
   - .log
-
   - .que
 
 - Offline address book-related extensions:
-
   - .lzx
 
 - Content Index-related extensions:
-
   - .ci
-
   - .dir
-
   - .wid
-
   - .000
-
   - .001
-
   - .002
 
 - Unified Messaging-related extensions:
-
   - .cfg
-
   - .grxml
 
 - Group Metrics-related extensions:
-
   - .dsc
-
   - .txt
