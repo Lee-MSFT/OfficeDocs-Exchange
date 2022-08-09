@@ -29,7 +29,7 @@ _**Applies to:** Exchange Server 2013_
 
 (This topic is intended for Exchange administrators.)
 
-The Recoverable Items folder (known in earlier versions of Exchange as *the dumpster*) exists to protect from accidental or malicious deletions and to facilitate discovery efforts commonly undertaken before or during litigation or investigations. To learn more about the Recoverable Items folder, see [Recoverable Items folder](recoverable-items-folder-exchange-2013-help.md).
+The Recoverable Items folder (known in earlier versions of Exchange as _the dumpster_) exists to protect from accidental or malicious deletions and to facilitate discovery efforts commonly undertaken before or during litigation or investigations. To learn more about the Recoverable Items folder, see [Recoverable Items folder](recoverable-items-folder-exchange-2013-help.md).
 
 How you clean up the Recoverable Items folder in a user's mailbox depends on whether the mailbox is placed on In-Place Hold or Litigation Hold, or had single item recovery enabled:
 
@@ -68,7 +68,7 @@ Search-Mailbox -Identity "Gurinder Singh" -SearchDumpsterOnly -TargetMailbox "Di
 ```
 
 > [!NOTE]
-> To delete items from the mailbox without copying them to another mailbox, use the preceding command without the <EM>TargetMailbox</EM> and <EM>TargetFolder</EM> parameters.
+> To delete items from the mailbox without copying them to another mailbox, use the preceding command without the _TargetMailbox_ and _TargetFolder_ parameters.
 
 For detailed syntax and parameter information, see [Search-Mailbox](/powershell/module/exchange/Search-Mailbox).
 
@@ -82,22 +82,16 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
 
 1. Retrieve the following quota settings. Be sure to note the values so you can revert to these settings after cleaning up the Recoverable Items folder:
 
-   - *RecoverableItemsQuota*
-
-   - *RecoverableItemsWarningQuota*
-
-   - *ProhibitSendQuota*
-
-   - *ProhibitSendReceiveQuota*
-
-   - *UseDatabaseQuotaDefaults*
-
-   - *RetainDeletedItemsFor*
-
-   - *UseDatabaseRetentionDefaults*
+   - _RecoverableItemsQuota_
+   - _RecoverableItemsWarningQuota_
+   - _ProhibitSendQuota_
+   - _ProhibitSendReceiveQuota_
+   - _UseDatabaseQuotaDefaults_
+   - _RetainDeletedItemsFor_
+   - _UseDatabaseRetentionDefaults_
 
    > [!NOTE]
-   > If the <EM>UseDatabaseQuotaDefaults</EM> parameter is set to <CODE>$true</CODE>, the previous quota settings aren't applied. The corresponding quota settings configured on the mailbox database are applied, even if individual mailbox settings are populated.
+   > If the _UseDatabaseQuotaDefaults_ parameter is set to `$true`, the previous quota settings aren't applied. The corresponding quota settings configured on the mailbox database are applied, even if individual mailbox settings are populated.
 
    ```powershell
    Get-Mailbox "Gurinder Singh" | Format-List RecoverableItemsQuota, RecoverableItemsWarningQuota, ProhibitSendQuota, ProhibitSendReceiveQuota, UseDatabaseQuotaDefaults, RetainDeletedItemsFor, UseDatabaseRetentionDefaults
@@ -157,14 +151,14 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
    Search-Mailbox -Identity "Gurinder Singh" -SearchDumpsterOnly -TargetMailbox "Discovery Search Mailbox" -TargetFolder "GurinderSingh-RecoverableItems" -DeleteContent
    ```
 
-   If you need to delete only messages that match specified conditions, use the *SearchQuery* parameter to specify the conditions. This example deletes messages that have the string "Your bank statement" in the **Subject** field.
+   If you need to delete only messages that match specified conditions, use the _SearchQuery_ parameter to specify the conditions. This example deletes messages that have the string "Your bank statement" in the **Subject** field.
 
    ```powershell
    Search-Mailbox -Identity "Gurinder Singh" -SearchQuery "Subject:'Your bank statement'" -SearchDumpsterOnly -TargetMailbox "Discovery Search Mailbox" -TargetFolder "GurinderSingh-RecoverableItems" -DeleteContent
    ```
 
    > [!NOTE]
-   > It isn't required to copy items to the Discovery Search Mailbox. You can copy messages to any mailbox. However, to prevent access to potentially sensitive mailbox data, we recommend copying messages to a mailbox that has access restricted to authorized records managers. By default, access to the default Discovery Search Mailbox is restricted to members of the Discovery Management role group. For details, see <A href="/exchange/security-and-compliance/in-place-ediscovery/in-place-ediscovery">In-Place eDiscovery</A>.
+   > It isn't required to copy items to the Discovery Search Mailbox. You can copy messages to any mailbox. However, to prevent access to potentially sensitive mailbox data, we recommend copying messages to a mailbox that has access restricted to authorized records managers. By default, access to the default Discovery Search Mailbox is restricted to members of the Discovery Management role group. For details, see [In-Place eDiscovery](in-place-ediscovery-exchange-2013-help.md).
 
 10. If the mailbox was placed on Litigation Hold or had single item recovery enabled earlier, enable these features again.
 
@@ -177,21 +171,15 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
 
 11. Revert the following quotas to the values noted in Step 1:
 
-    - *RecoverableItemsQuota*
+    - _RecoverableItemsQuota_
+    - _RecoverableItemsWarningQuota_
+    - _ProhibitSendQuota_
+    - _ProhibitSendReceiveQuota_
+    - _UseDatabaseQuotaDefaults_
+    - _RetainDeletedItemsFor_
+    - _UseDatabaseRetentionDefaults_
 
-    - *RecoverableItemsWarningQuota*
-
-    - *ProhibitSendQuota*
-
-    - *ProhibitSendReceiveQuota*
-
-    - *UseDatabaseQuotaDefaults*
-
-    - *RetainDeletedItemsFor*
-
-    - *UseDatabaseRetentionDefaults*
-
-    In this example, the mailbox is removed from retention hold, the deleted item retention period is reset to the default value of 14 days, and the Recoverable Items quota is configured to use the same value as the mailbox database. If the values you noted in Step 1 are different, you must use the preceding parameters to specify each value and set the *UseDatabaseQuotaDefaults* parameter to `$false`. If the *RetainDeletedItemsFor* *and UseDatabaseRetentionDefaults* parameters were previously set to a different value, you must also revert them to the values noted in Step 1.
+    In this example, the mailbox is removed from retention hold, the deleted item retention period is reset to the default value of 14 days, and the Recoverable Items quota is configured to use the same value as the mailbox database. If the values you noted in Step 1 are different, you must use the preceding parameters to specify each value and set the _UseDatabaseQuotaDefaults_ parameter to `$false`. If the _RetainDeletedItemsFor_ _and UseDatabaseRetentionDefaults_ parameters were previously set to a different value, you must also revert them to the values noted in Step 1.
 
     ```powershell
     Set-Mailbox "Gurinder Singh" -RetentionHoldEnabled $false -RetainDeletedItemsFor 14 -RecoverableItemsQuota unlimited -UseDatabaseQuotaDefaults $true

@@ -46,4 +46,6 @@ After you define the files to look for, you can configure the action to take on 
 For more information, see [Manage attachment filtering on Edge Transport servers](manage-attachment-filtering-on-edge-transport-servers-exchange-2013-help.md).
 
 > [!NOTE]
-> You can't retrieve messages that have been blocked or attachments that have been stripped. When you configure attachment filters, carefully examine all possible file name matches and verify that legitimate attachments won't be affected by the filter.<BR>Also, don't remove attachments from digitally signed, encrypted, or rights-protected email messages. If you remove attachments from such messages, you invalidate the digitally signed messages and make encrypted and rights-protected messages unreadable.
+> You can't retrieve messages that have been blocked or attachments that have been stripped. When you configure attachment filters, carefully examine all possible file name matches and verify that legitimate attachments won't be affected by the filter.
+>
+> Also, don't remove attachments from digitally signed, encrypted, or rights-protected email messages. If you remove attachments from such messages, you invalidate the digitally signed messages and make encrypted and rights-protected messages unreadable.

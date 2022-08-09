@@ -23,10 +23,10 @@ When you create or move a mailbox, or mail-enable an existing user, that mailbox
 
 With automatic mailbox distribution, Exchange looks at the mailbox databases in your organization, excludes databases that aren't suitable using criteria discussed later in this topic, and then randomly chooses a database where the mailbox should be located. This process randomly distributes mailboxes across all of the suitable mailbox databases in your organization.
 
-Automatic distribution is used when you don't specify the *Database* parameter on the **New-Mailbox** and **Enable-Mailbox** cmdlets or the *TargetDatabase* parameter on the **New-MoveRequest** cmdlet.
+Automatic distribution is used when you don't specify the _Database_ parameter on the **New-Mailbox** and **Enable-Mailbox** cmdlets or the _TargetDatabase_ parameter on the **New-MoveRequest** cmdlet.
 
 > [!NOTE]
-> Automatic mailbox distribution is performed only when a mailbox is created on an Exchange 2013 server, moved to an Exchange 2013 server, or when a user is mail-enabled. The <STRONG>New-Mailbox</STRONG>, <STRONG>New-MoveRequest</STRONG>, and <STRONG>Enable-Mailbox</STRONG> cmdlets must be run from a server running Exchange 2013. Exchange doesn't redistribute mailboxes to distribute load across databases automatically based on server load.
+> Automatic mailbox distribution is performed only when a mailbox is created on an Exchange 2013 server, moved to an Exchange 2013 server, or when a user is mail-enabled. The **New-Mailbox**, **New-MoveRequest**, and **Enable-Mailbox** cmdlets must be run from a server running Exchange 2013. Exchange doesn't redistribute mailboxes to distribute load across databases automatically based on server load.
 
 The following process is used to find a suitable mailbox database where a new or moved mailbox should be located:
 
@@ -46,12 +46,12 @@ If you never want mailboxes to be distributed automatically, you can disable the
 
 ## Exclude Databases from Automatic Distribution
 
-By default, all online and healthy mailbox databases on Exchange 2013 servers in the local Active Directory site can be chosen by automatic mailbox distribution to store a new or moved mailbox. However, you might want to exclude some databases from the distribution process for various reasons. For example, you may designate a mailbox database as a journaling database in which only mailboxes you manually specify should be located. Or you might want to temporarily remove a database from rotation to perform scheduled maintenance. Exchange 2013 gives you the option to either permanently or temporarily exclude databases from the exclusion process using the *IsExcludedFromProvisioning* parameter that can be set using the **Set-MailboxDatabase** cmdlet.
+By default, all online and healthy mailbox databases on Exchange 2013 servers in the local Active Directory site can be chosen by automatic mailbox distribution to store a new or moved mailbox. However, you might want to exclude some databases from the distribution process for various reasons. For example, you may designate a mailbox database as a journaling database in which only mailboxes you manually specify should be located. Or you might want to temporarily remove a database from rotation to perform scheduled maintenance. Exchange 2013 gives you the option to either permanently or temporarily exclude databases from the exclusion process using the _IsExcludedFromProvisioning_ parameter that can be set using the **Set-MailboxDatabase** cmdlet.
 
 > [!NOTE]
-> Two other parameters, <EM>IsSuspendedFromProvisioning</EM> and <EM>IsExcludedFromInitialProvisioning</EM>, are also available on the <STRONG>Set-MailboxDatabase</STRONG> cmdlet. These parameters will be removed in a future release of Exchange and their use isn't supported.
+> Two other parameters, _IsSuspendedFromProvisioning_ and _IsExcludedFromInitialProvisioning_, are also available on the **Set-MailboxDatabase** cmdlet. These parameters will be removed in a future release of Exchange and their use isn't supported.
 
-The *IsExcludedFromProvisioning* parameter has have two valid values, `$True` and `$False`. When you set this property to `$True`, the mailbox database is excluded from the automatic distribution process. When you set it to `$False`, the mailbox database is included in the automatic distribution process. The default value is `$False`.
+The _IsExcludedFromProvisioning_ parameter has have two valid values, `$True` and `$False`. When you set this property to `$True`, the mailbox database is excluded from the automatic distribution process. When you set it to `$False`, the mailbox database is included in the automatic distribution process. The default value is `$False`.
 
 To exclude a mailbox database from automatic distribution, use the following command:
 
@@ -59,7 +59,7 @@ To exclude a mailbox database from automatic distribution, use the following com
 Set-MailboxDatabase <database name> -IsExcludedFromProvisioning $True
 ```
 
-When a mailbox database is excluded from automatic distribution, the only way to create a mailbox in, or move a mailbox to, the database is to use the *Database* parameter on the **New-Mailbox** and **Enable-Mailbox** cmdlets or the *TargetDatabase* parameter on the **New-MoveRequest** cmdlet.
+When a mailbox database is excluded from automatic distribution, the only way to create a mailbox in, or move a mailbox to, the database is to use the _Database_ parameter on the **New-Mailbox** and **Enable-Mailbox** cmdlets or the _TargetDatabase_ parameter on the **New-MoveRequest** cmdlet.
 
 ## Database Scopes
 
@@ -79,9 +79,9 @@ By default, all administrators in an Exchange 2013 organization can see all of t
 
 2. Associate the new database scope with a management role assignment in one of the following ways:
 
-      - Add the new database scope to an existing management role assignment using the *CustomConfigWriteScope* parameter on the **Set-ManagementRoleAssignment** cmdlet. The database scope is now applied to the management role group, universal security group (USG), or user assigned the role assignment.
+      - Add the new database scope to an existing management role assignment using the _CustomConfigWriteScope_ parameter on the **Set-ManagementRoleAssignment** cmdlet. The database scope is now applied to the management role group, universal security group (USG), or user assigned the role assignment.
 
-      - Create a management role assignment using the **New-ManagementRoleAssignment** cmdlet and use the *CustomConfigWriteScope* parameter to specify the new database scope. You can create a role assignment between a management role and a role group, USG, or user.
+      - Create a management role assignment using the **New-ManagementRoleAssignment** cmdlet and use the _CustomConfigWriteScope_ parameter to specify the new database scope. You can create a role assignment between a management role and a role group, USG, or user.
 
 3. If you created a role assignment to a role group or USG, add users to the role group or USG so that the role assignment and database scope are applied to the users.
 

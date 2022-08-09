@@ -53,7 +53,7 @@ If an accepted domain for your Exchange organization hosts all the mailboxes for
 5. Click **Save**.
 
 > [!TIP]
-> To configure an accepted domain that has already been created, select the domain from the accepted domains list and click <STRONG>Edit</STRONG> <IMG title="Edit icon" alt="Edit icon" src="images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif">. You can configure more than one domain as authoritative.
+> To configure an accepted domain that has already been created, select the domain from the accepted domains list and click **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif). You can configure more than one domain as authoritative.
 
 ## How do you know this worked?
 
