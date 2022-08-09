@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-In Active Directory, the *forest* represents the outer boundary of your directory service. You can create Send connectors to enable communication between forests. In this example, the connectors use Basic authentication.
+In Active Directory, the _forest_ represents the outer boundary of your directory service. You can create Send connectors to enable communication between forests. In this example, the connectors use Basic authentication.
 
 For additional management tasks related to configuring connectors, see [Connectors](connectors-exchange-2013-help.md).
 

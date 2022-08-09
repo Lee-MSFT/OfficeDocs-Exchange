@@ -53,7 +53,7 @@ Looking for other management tasks related to roles? Check out [Advanced permiss
 
 - If you create an assignment with a scope, the scope overrides the role's implicit write scope. However, the role's implicit read scope still applies. The new scope can't return objects outside of the role's implicit read scope. For more information, see [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md).
 
-- All the procedures in this topic use the *SecurityGroup* parameter to assign roles to a USG. If you want to assign the role to a specific user, use the *User* parameter instead of the *SecurityGroup* parameter. All other syntax for each command is the same.
+- All the procedures in this topic use the _SecurityGroup_ parameter to assign roles to a USG. If you want to assign the role to a specific user, use the _User_ parameter instead of the _SecurityGroup_ parameter. All other syntax for each command is the same.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
@@ -98,7 +98,7 @@ For detailed syntax and parameter information, see [New-ManagementRoleAssignment
 
 ## Create a role assignment with a recipient filter-based scope
 
-If you created a recipient filter-based scope and want to use it with a role assignment, you need to include the scope in the command used to assign the role to a USG by using the *CustomRecipientWriteScope* parameter. If you use the *CustomRecipientWriteScope* parameter, you can't use the *RecipientOrganizationalUnitScope* parameter.
+If you created a recipient filter-based scope and want to use it with a role assignment, you need to include the scope in the command used to assign the role to a USG by using the _CustomRecipientWriteScope_ parameter. If you use the _CustomRecipientWriteScope_ parameter, you can't use the _RecipientOrganizationalUnitScope_ parameter.
 
 Before you can add a scope to a role assignment, you need to create one. For more information, see [Create a regular or exclusive scope](create-a-regular-or-exclusive-scope-exchange-2013-help.md).
 
@@ -118,7 +118,7 @@ For detailed syntax and parameter information, see [New-ManagementRoleAssignment
 
 ## Create a role assignment with a server or database filter or list-based configuration scope
 
-If you created a server or database filter or list-based configuration scope and want to use it with a role assignment, you need to include the scope in the command used to assign the role to a USG by using the *CustomConfigWriteScope* parameter.
+If you created a server or database filter or list-based configuration scope and want to use it with a role assignment, you need to include the scope in the command used to assign the role to a USG by using the _CustomConfigWriteScope_ parameter.
 
 Before you can add a scope to a role assignment, you need to create one. For more information, see [Create a regular or exclusive scope](create-a-regular-or-exclusive-scope-exchange-2013-help.md).
 
@@ -140,7 +140,7 @@ For detailed syntax and parameter information, see [New-ManagementRoleAssignment
 
 ## Create a role assignment with an OU scope
 
-If you want to scope a role's write scope to an organizational unit (OU), you can specify the OU in the *RecipientOrganizationalUnitScope* parameter directly. If you use the *RecipientOrganizationalUnitScope* parameter, you can't use the *CustomRecipientWriteScope* parameter.
+If you want to scope a role's write scope to an organizational unit (OU), you can specify the OU in the _RecipientOrganizationalUnitScope_ parameter directly. If you use the _RecipientOrganizationalUnitScope_ parameter, you can't use the _CustomRecipientWriteScope_ parameter.
 
 Use the following syntax to assign a role to a USG and restrict the write scope of a role to a specific OU.
 
@@ -160,9 +160,9 @@ For detailed syntax and parameter information, see [New-ManagementRoleAssignment
 
 To create an exclusive role assignment with an exclusive recipient or configuration scope, the same procedures provided in the Create a role assignment with a recipient filter-based scope and Create a role assignment with a server or database filter or list-based configuration scope sections can be used. The only difference is that when you create a role assignment with an exclusive scope, you must specify the following exclusive parameters depending on whether you're using an exclusive recipient scope or an exclusive configuration scope:
 
-- **Exclusive recipient scopes**: Use the *ExclusiveRecipientWriteScope* parameter instead of the *CustomRecipientWriteScope* parameter.
+- **Exclusive recipient scopes**: Use the _ExclusiveRecipientWriteScope_ parameter instead of the _CustomRecipientWriteScope_ parameter.
 
-- **Exclusive configuration scopes**: Use the *ExclusiveConfigWriteScope* parameter instead of the *CustomConfigWriteScope* parameter.
+- **Exclusive configuration scopes**: Use the _ExclusiveConfigWriteScope_ parameter instead of the _CustomConfigWriteScope_ parameter.
 
 When you perform this procedure, the role assignees assigned the role can perform actions against the objects included in the exclusive scope. For more information about exclusive scopes, see [Understanding exclusive scopes](understanding-exclusive-scopes-exchange-2013-help.md).
 

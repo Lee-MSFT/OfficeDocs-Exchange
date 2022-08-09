@@ -76,7 +76,7 @@ To verify that you've configured Exchange to allow users to view their POP3 serv
    Get-PopSettings | format-list
    ```
 
-2. Verify that the *ExternalConnectionSettings* property is set.
+2. Verify that the _ExternalConnectionSettings_ property is set.
 
 To verify that you've configured Exchange to allow users to view their IMAP4 server settings:
 
@@ -86,7 +86,7 @@ To verify that you've configured Exchange to allow users to view their IMAP4 ser
    Get-ImapSettings | format-list
    ```
 
-2. Verify that the *ExternalConnectionSettings* property is set.
+2. Verify that the _ExternalConnectionSettings_ property is set.
 
 ## Use the Shell to allow POP3 and IMAP4 users to view their outgoing SMTP settings in Outlook Web App
 
@@ -110,7 +110,7 @@ To verify that you've configured Exchange to allow users to view their SMTP serv
    Get-ReceiveConnector | format-list
    ```
 
-2. If the *AdvertiseClientSettings* property is set to `true`, users can view their SMTP server settings in Outlook Web App. If *AdvertiseClientSettings* is set to `false`, users can't view their SMTP server settings in Outlook Web App.
+2. If the _AdvertiseClientSettings_ property is set to `true`, users can view their SMTP server settings in Outlook Web App. If _AdvertiseClientSettings_ is set to `false`, users can't view their SMTP server settings in Outlook Web App.
 
 ## For more information
 

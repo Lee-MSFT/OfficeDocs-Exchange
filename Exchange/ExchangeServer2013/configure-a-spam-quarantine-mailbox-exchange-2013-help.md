@@ -116,7 +116,7 @@ When you manage your spam quarantine mailbox, follow these guidelines:
 - Use the same Outlook profile to recover quarantined messages from the spam quarantine mailbox. Applying permissions to a different Outlook profile to recover messages isn't supported. You can't use a different Outlook profile to recover or release messages from the spam quarantine mailbox.
 
 > [!IMPORTANT]
-> NDRs identified as spam are deleted, even if their SCL rating indicates that they should be quarantined. NDRs aren't delivered to the spam quarantine mailbox. To track such messages, use the agent log or the message tracking log. For more information, see <A href="anti-spam-agent-logging-exchange-2013-help.md">Anti-spam agent logging</A>.
+> NDRs identified as spam are deleted, even if their SCL rating indicates that they should be quarantined. NDRs aren't delivered to the spam quarantine mailbox. To track such messages, use the agent log or the message tracking log. For more information, see [Anti-spam agent logging](anti-spam-agent-logging-exchange-2013-help.md).
 
 ## Step 6: Adjust the SCL quarantine threshold
 

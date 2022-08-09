@@ -59,7 +59,7 @@ This example adds the **Set-Mailbox** cmdlet to the Recipient Administrators rol
 Add-ManagementRoleEntry "Recipient Administrators\Set-Mailbox"
 ```
 
-This command checks the parent role, and if the role entry exists, adds it to the child role. If the role entry already exists on the child role, you can include the *Overwrite* parameter to overwrite the existing role entry.
+This command checks the parent role, and if the role entry exists, adds it to the child role. If the role entry already exists on the child role, you can include the _Overwrite_ parameter to overwrite the existing role entry.
 
 For detailed syntax and parameter information, see [Add-ManagementRoleEntry](/powershell/module/exchange/Add-ManagementRoleEntry).
 
@@ -71,13 +71,13 @@ If you want to add a role entry from a parent role, but you want to include only
 Add-ManagementRoleEntry <child role name>\<cmdlet> -Parameters <parameter 1>, <parameter 2>, <parameter...>
 ```
 
-This example adds the **Set-Mailbox** cmdlet to the Help Desk role, but includes only the *DisplayName* and *EmailAddresses* parameters in the entry on the child role.
+This example adds the **Set-Mailbox** cmdlet to the Help Desk role, but includes only the _DisplayName_ and _EmailAddresses_ parameters in the entry on the child role.
 
 ```powershell
 Add-ManagementRoleEntry "Help Desk\Set-Mailbox" -Parameters DisplayName, EmailAddresses
 ```
 
-This command checks the parent role, and if the role entry exists, adds it to the child role. If the role entry already exists on the child role, you can include the *Overwrite* parameter to overwrite the existing role entry.
+This command checks the parent role, and if the role entry exists, adds it to the child role. If the role entry already exists on the child role, you can include the _Overwrite_ parameter to overwrite the existing role entry.
 
 For detailed syntax and parameter information, see [Add-ManagementRoleEntry](/powershell/module/exchange/Add-ManagementRoleEntry).
 
@@ -97,7 +97,7 @@ This example adds all the role entries that contain the string `Mailbox` in the 
 Get-ManagementRoleEntry "Mail Recipients\*Mailbox*" | Add-ManagementRoleEntry -Role "Seattle Mail Recipients"
 ```
 
-If the role entries already exist on the child role, you can include the *Overwrite* parameter to overwrite the existing role entries.
+If the role entries already exist on the child role, you can include the _Overwrite_ parameter to overwrite the existing role entries.
 
 For more information about retrieving a list of management role entries, see [View role entries](view-role-entries-exchange-2013-help.md).
 

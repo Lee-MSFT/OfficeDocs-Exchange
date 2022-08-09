@@ -11,7 +11,7 @@ ms.service: exchange-online
 ms.localizationpriority: medium
 ms.assetid:
 ms.custom:
-description: "Admins can use message trace in the modern Exchange amdin center to find out what happened to messages."
+description: "Admins can use message trace in the modern Exchange admin center to find out what happened to messages."
 ---
 
 # Message trace in the modern Exchange admin center in Exchange Online
@@ -39,15 +39,15 @@ To go directly to message trace, open <https://admin.exchange.microsoft.com/#/me
 
 ## Message trace page
 
-From here you can start a new default trace by clicking **Start a trace**. This will search for all messages for all senders and recipients for the last two days. Or you can use one of the stored queries from the available query categories and either run them as-is or use them as starting points for your own queries:
+From here, you can start a new default trace by clicking **Start a trace**. This option will trigger a search for all messages for all senders and recipients for the last two days. Or you can use one of the stored queries from the available query categories and either run them as-is or use them as starting points for your own queries:
 
 - **Default queries**: Built-in queries provided by Microsoft 365.
 
 - **Custom queries**: Queries saved by admins in your organization for future use.
 
-- **Autosaved queries**: The last ten most recently run queries. This list makes it simple to pick up where you left off.
+- **Autosaved queries**: The last 10 most recently run queries. This list makes it simple to pick up where you left off.
 
-Also on this page is a **Downloadable reports** section for the requests you've submitted, as well as the reports themselves when they're are available for download.
+Also on this page is a **Downloadable reports** section for the requests you've submitted, and the reports themselves when they're available for download.
 
 ## Options for a new message trace
 
@@ -55,7 +55,7 @@ Also on this page is a **Downloadable reports** section for the requests you've 
 
 The default values are **All** for **Senders** and **All** for **Recipients**, but you can use those fields to filter the results:
 
-- **Senders**: Click in this box and start typing to enter or select one more senders from your organization.
+- **Senders**: Click in this box and start typing to enter or select one or more senders from your organization.
 
 - **Recipients**: Click in this box and start typing to enter or select one more recipient in your organization.
 
@@ -73,11 +73,11 @@ The default value is **2 days**, but you can specify date/time ranges of up to 9
 
   ![A Slider time range in a new message trace in the modern EAC.](../../media/message-trace-time-slider-modern-eac.png)
 
-  But, you can also switch to **Custom time range** view where you can specify the **Start date** and **End date** values (including times), and you can also select the **Time zone** for the date/time range. Note that the **Time zone** setting applies to both your query inputs and your query results.
+  But, you can also switch to **Custom time range** view where you can specify the **Start date** and **End date** values (including times), and you can also select the **Time zone** for the date/time range. The **Time zone** setting applies to both your query inputs and your query results.
 
   ![A Custom time range in a new message trace in the modern EAC.](../../media/message-trace-time-range-modern-eac.png)
 
-  For 10 days or less, the results are available instantly as a **Summary** report. If you specify a time range that's even slightly greater than 10 days, the results will be delayed as they are only available as a downloadable CSV file ( **Enhanced summary** or **Extended** reports).
+  For 10 days or less, the results are available instantly as a **Summary** report. If you specify a time range that's even slightly greater than 10 days, the results will be delayed as they're only available as a downloadable CSV file ( **Enhanced summary** or **Extended** reports).
 
   For more information about the different report types, see the [Choose report type](#choose-report-type) section in this topic.
 
@@ -99,9 +99,9 @@ You can leave the default value **All** selected, or you can select one of the f
 
 - **Expanded**: A distribution group recipient was expanded before delivery to the individual members of the group.
 
-- **Failed**: The message was not delivered.
+- **Failed**: The message wasn't delivered.
 
-- **Pending**: Delivery of the message is being attempted or re-attempted.
+- **Pending**: Delivery of the message is being attempted or reattempted.
 
 - **Quarantined**: The message was quarantined (as spam, bulk mail, or phishing). For more information, see [Quarantined email messages in EOP](/microsoft-365/security/office-365-security/quarantine-email-messages).
 
@@ -114,11 +114,51 @@ You can leave the default value **All** selected, or you can select one of the f
 
 #### Message ID
 
-This is the internet message ID (also known as the Client ID) that's found in the **Message-ID** header field in the message header. Users can give you this value to investigate specific messages.
+This value is the internet message ID (also known as the Client ID) that's found in the **Message-ID** header field in the message header. Users can give you this value to investigate specific messages.
 
 This value is constant for the lifetime of the message. For messages created in Microsoft 365 or Exchange, the value is in the format `<GUID@ServerFQDN>`, including the angle brackets (\< \>). For example, `<d9683b4c-127b-413a-ae2e-fa7dfb32c69d@DM3NAM06BG401.Eop-nam06.prod.protection.outlook.com>`. Other messaging systems might use different syntax or values. This value is supposed to be unique, but not all email systems strictly follow this requirement. If the **Message-ID:** header field doesn't exist or is blank for incoming messages from external sources, an arbitrary value is assigned.
 
 When you use **Message ID** to filter the results, be sure to include the full string, including any angle brackets.
+
+#### Network Message ID
+
+Network Message ID is a unique message ID value that prevails across copies of the message that may be created due to bifurcation, and across the message transport process. It's dynamic wherein its value differs for even a copy of the message's specific instance. Therefore, each copied version of the instance will have a different **Network Message ID** value.
+
+The differences between Network Message ID and Message ID are described in the following table:
+
+|Network Message ID  |Message ID  |
+|---------|---------|
+|ID of an email message's specific instance   |ID of the email message        |
+|Unique and persists across copies of the message that may be created due to bifurcation        |   Constant for the lifetime of the message      |
+
+For more information about Network Message ID, see:
+
+- [Message tracking logs](../../../ExchangeServer/mail-flow/transport-logs/message-tracking.md) in Exchange Servers
+- [Enhanced message trace reports](message-trace-modern-eac.md) in Exchange Online
+- [Message headers](https://support.microsoft.com/en-us/office/view-internet-message-headers-in-outlook-cd039382-dc6e-4264-ac74-c048563d212c) from Outlook
+
+To trace the **Network Message ID** value and use it to trace specific messages in Exchange Online, use the following message headers:
+
+- `X-MS-Exchange-Organization-Network-Message-Id`, or
+
+- `X-MS-Exchange-CrossTenant-Network-Message-Id`
+
+The above message headers will enable you to trace the **Network Message ID** value. You can use this value to further retrieve specific messages, for example, messages with the traced **Network Message ID** value which were sent by a specific sender, addressed to a specific recipient, or sent during a specified time period.
+
+You can also use the following command to trace the **Network Message ID** value:
+
+`Get-MessageTrace -MessageTraceId 2bbad36aa4674c7ba82f4b307fff549f -SenderAddress john@contoso.com -StartDate 06/13/2022 -EndDate 06/15/2022 | Get-MessageTraceDetail`
+
+> [!NOTE]
+> **-MessageTraceId** is a parameter that's an alternative (and is effectively similar) to  **Network Message ID**.
+
+The above command enables you to identify:
+- The **Network Message ID** value
+- The specific messages this **Network Message ID** value helps in retrieving
+
+For example, in the above command, the value of **Message Trace ID** is **2bbad36aa4674c7ba82f4b307fff549f** which is effectively the **Network Message ID** value. This value **2bbad36aa4674c7ba82f4b307fff549f** is used by the **Get-MessageTrace** cmdlet to retrieve trace information for messages with this value and that have been sent by john@contoso.com between June 13, 2022, and June 15, 2022.
+
+The **Get-MessageTrace** cmdlet then pipes the retrieved trace information to the **Get-MessageTraceDetail** cmdlet.
 
 #### Direction
 
@@ -126,7 +166,7 @@ You can leave the default value **All** selected, or you can select **Inbound** 
 
 #### Original client IP address
 
-You can filer the results by client IP address to investigate hacked computers that are sending large amounts of spam or malware. Although the messages might appear to come from multiple senders, it's likely that the same computer is generating all of the messages.
+You can filter the results by client IP address to investigate hacked computers that are sending large amounts of spam or malware. Although the messages might appear to come from multiple senders, it's likely that the same computer is generating all of the messages.
 
 > [!NOTE]
 > The client IP address information is only available for 10 days, and is only available in the **Enhanced summary** or **Extended** reports (downloadable CSV files).
@@ -135,9 +175,9 @@ You can filer the results by client IP address to investigate hacked computers t
 
 The available report types are:
 
-- **Summary**: Available if the time range is less than 10 days, and requires no additional filtering options. The results are available almost immediately after you click **Search**. The report returns up to 20000 results.
+- **Summary**: Available if the time range is less than 10 days, and requires no other filtering options. The results are available almost immediately after you click **Search**. The report returns up to 20000 results.
 
-- **Enhanced summary** or **Extended**: These reports are only available as downloadable CSV files, and require one or more of the following filtering options regardless of the time range: **Senders**, **Recipients**, or **Message ID**. You can use wildcards for the senders or the recipients (for example, \*@contoso.com). The Enhanced summary report returns up to 50000 results. The Extended report returns up to 1000 results.
+- **Enhanced summary** or **Extended**: These reports are only available as downloadable CSV files, and require one or more of the following filtering options regardless of the time range: **Senders**, **Recipients**, or **Message ID**. You can use wildcards for the senders or the recipients (for example, \*@contoso.com). The Enhanced summary report returns up to 50,000 results. The Extended report returns up to 1000 results.
 
 > [!NOTE]
 >
@@ -157,7 +197,7 @@ The different report types return different levels of information. The informati
 
 ### Summary report output
 
-After running the message trace, the results will be listed, sorted by descending date/time (most recent first).
+After the message trace is executed, the results will be listed, sorted by descending date/time (most recent first).
 
 The summary report contains the following information:
 
@@ -189,7 +229,7 @@ For more information about the Message ID, see the Message ID section earlier in
 
 #### Message trace details
 
-In the summary report output, you can view details about a message by select the row (click anywhere in the row except the check box).
+In the summary report output, you can view details about a message by selecting the row (click anywhere in the row except the check box).
 
 ![Details after clicking a row in the summary report message trace results in the modern EAC.](../../media/message-trace-message-details-full-modern-eac.png)
 
@@ -203,18 +243,18 @@ The message trace details contain the following additional information that's no
   - **Deliver**: The message was delivered to a mailbox.
   - **Expand**: The message was sent to a distribution group that was expanded.
   - **Transfer**: Recipients were moved to a bifurcated message because of content conversion, message recipient limits, or agents.
-  - **Defer**: The message delivery was postponed and might be re-attempted later.
-  - **Resolved**: The message was redirected to a new recipient address based on an Active Directory look up. When this happens, the original recipient address is listed in a separate row in the message trace along with the final delivery status for the message.
+  - **Defer**: The message delivery was postponed and might be reattempted later.
+  - **Resolved**: The message was redirected to a new recipient address based on an Active Directory look up. When this event happens, the original recipient address is listed in a separate row in the message trace along with the final delivery status for the message.
   - **DLP rule**: The message had a DLP rule match in this message.
-  - **Sensitivity label:** A server-side labeling event occurred. For example, a label was automatically added to a message that includes an action to encrypt or was added via the web or mobile client. This action is completed by the Exchange server and logged. A label added via Outlook will not be included in the event field.
+  - **Sensitivity label:** A server-side labeling event occurred. For example, a label was automatically added to a message that includes an action to encrypt or was added via the web or mobile client. This action is completed by the Exchange server and logged. A label added via Outlook won't be included in the event field.
 
   Notes:
 
   - An uneventful message that's successfully delivered will generate multiple **Event** entries in the message trace.
 
-  - This list is not meant to be exhaustive. For descriptions of more events, see [Event types in the message tracking log](../../../ExchangeServer/mail-flow/transport-logs/message-tracking.md#event-types-in-the-message-tracking-log). Note that this link is an Exchange Server (on-premises Exchange) topic.
+  - This list isn't meant to be exhaustive. For descriptions of more events, see [Event types in the message tracking log](../../../ExchangeServer/mail-flow/transport-logs/message-tracking.md#event-types-in-the-message-tracking-log). This link is an Exchange Server (on-premises Exchange) topic.
 
-- **More information**: After you expand this section, the section contains contains the following details:
+- **More information**: After you expand this section, the section contains the following details:
 
   - **Message ID**: This value is described in the [Message ID](#message-id) section earlier in this topic. For example, `<d9683b4c-127b-413a-ae2e-fa7dfb32c69d@DM3NAM06BG401.Eop-nam06.prod.protection.outlook.com>`.
 
@@ -222,7 +262,7 @@ The message trace details contain the following additional information that's no
 
   - **From IP**: The IP address of the computer that sent the message. For outbound messages sent from Exchange Online, this value is blank.
 
-  - **To IP**: The IP address or addresses where the service attempted to deliver the message. If the message has multiple recipients, these are displayed. For inbound messages sent to Exchange Online, this value is blank.
+  - **To IP**: The IP address or addresses where the service attempted to deliver the message. If the message has multiple recipients, these addresses are displayed. For inbound messages sent to Exchange Online, this value is blank.
 
 ### Enhanced summary reports
 
@@ -260,7 +300,7 @@ Available (completed) Enhanced summary reports are available in the **Downloadab
 
 ### Extended reports
 
-Available (completed) Extended reports are available in the **Downloadable reports** section at the beginning of message trace. Virtually all of the information from an Enhanced summary report is available in an Extended report (with the exception of **origin_timestamp** and **delivery_priority**). The following additional information is only available in an Extended report:
+Available (completed) Extended reports are available in the **Downloadable reports** section at the beginning of message trace. Virtually all of the information from an Enhanced summary report is available in an Extended report (except for **origin_timestamp** and **delivery_priority**). The following additional information is only available in an Extended report:
 
 - **client_ip**: The IP address of the email server or messaging client that submitted the message.
 
@@ -281,7 +321,7 @@ Available (completed) Extended reports are available in the **Downloadable repor
   - `MAILBOXRULE`
   - `SMTP`
 
-- **event_id**: These correspond to the **Message event** values that are explained in the [Find related records for this message](#find-related-records-for-this-message) section.
+- **event_id**: This value corresponds to the **Message event** values that are explained in the [Find related records for this message](#find-related-records-for-this-message) section.
 
 - **internal_message_id**: A message identifier that's assigned by the Exchange Online server that's currently processing the message.
 
@@ -293,7 +333,7 @@ Available (completed) Extended reports are available in the **Downloadable repor
 
 - **reference**: This field contains additional information for specific types of events. For example:
 
-  - **DSN**: Contains the report link, which is the **message_id** value of the associated delivery status notification (also known as a DSN, non-delivery report, NDR, or bounce message) if a DSN is generated subsequent to this event. If this is a DSN message, this field contains the **message_id** value of the original message that the DSN was generated for.
+  - **DSN**: Contains the report link, which is the **message_id** value of the associated delivery status notification (also known as a DSN, non-delivery report, NDR, or bounce message) if a DSN is generated subsequent to this event. If this message is a DSN message, this field contains the **message_id** value of the original message that the DSN was generated for.
 
   - **EXPAND**: Contains the **related_recipient_address** value of the related messages.
 
@@ -305,7 +345,7 @@ Available (completed) Extended reports are available in the **Downloadable repor
 
   - **MAILBOXRULE**: Contains the **internal_message_id** value of the inbound message that caused the Inbox rule to generate the outbound message.
 
-    For other types of events, this field is usually blank.
+    For other types of events, this field is blank.
 
 - **return_path**: The return email address specified by the **MAIL FROM** command that sent the message. Although this field is never empty, it can have the null sender address value represented as `<>`.
 
@@ -323,7 +363,7 @@ Available (completed) Extended reports are available in the **Downloadable repor
 
 #### custom_data values
 
-The **custom_data** field for an `AGENTINFO` event is used by a variety of Exchange Online agents to log message processing details. Some of the more interesting agents are described in the following sections.
+The **custom_data** field for an `AGENTINFO` event is used by various Exchange Online agents to log message processing details. Some of the more interesting agents are described in the following sections.
 
 #### Spam filter agent
 
@@ -339,7 +379,7 @@ A **custom_data** value that starts with `S:AMA` is from the malware filter agen
 
 |Value|Description|
 |---|---|
-|`AMA=SUM|v=1|` or `AMA=EV|v=1`|The message was determined to contain malware. `SUM` indicates the malware could've been detected by any number of engines. `EV` indicates the malware was detected by a specific engine. When malware is detected by an engine this triggers the subsequent actions.|
+|`AMA=SUM|v=1|` or `AMA=EV|v=1`|The message was determined to contain malware. `SUM` indicates the malware could have been detected by any number of engines. `EV` indicates the malware was detected by a specific engine. When malware is detected by an engine, this detection triggers the subsequent actions.|
 |`Action=r`|The message was replaced.|
 |`Action=p`|The message was bypassed.|
 |`Action=d`|The message was deferred.|
@@ -365,8 +405,8 @@ A **custom_data** value that starts with`S:TRA` is from the Transport Rule agent
 |`ETR|ruleId=<guid>`|The rule ID that was matched.|
 |`St=<datetime>`|The date and time in UTC when the rule match occurred.|
 |`Action=<ActionDefinition>`|The action that was applied. For a list of available actions, see [Mail flow rule actions in Exchange Online](../../security-and-compliance/mail-flow-rules/mail-flow-rule-actions.md).|
-|`Mode=<Mode>`|The mode of the rule. Valid values are: <ul><li>**Enforce**: All actions on the rule will be enforced.</li><li>**Test with Policy Tips:**: Any Policy Tip actions will be sent, but other enforcement actions will not be acted on.</li><li>**Test without Policy Tips**: Actions will be listed in a log file, but senders will not be notified in any way, and enforcement actions will not be acted on.</li?</ul>|
+|`Mode=<Mode>`|The mode of the rule. Valid values are: <ul><li>**Enforce**: All actions on the rule will be enforced.</li><li>**Test with Policy Tips:**: Any Policy Tip actions will be sent, but other enforcement actions won't be acted on.</li><li>**Test without Policy Tips**: Actions will be listed in a log file, but senders won't be notified in any way, and enforcement actions won't be acted on.</li?</ul>|
 
-An example **custom_data** value for a messages that matches the conditions of a mail flow rule looks like this:
+An example **custom_data** value for a message that matches the conditions of a mail flow rule looks like this:
 
 `S:TRA=ETR|ruleId=19a25eb2-3e43-4896-ad9e-47b6c359779d|st=7/17/2017 12:31:25 AM|action=ApplyHtmlDisclaimer|sev=1|mode=Enforce`

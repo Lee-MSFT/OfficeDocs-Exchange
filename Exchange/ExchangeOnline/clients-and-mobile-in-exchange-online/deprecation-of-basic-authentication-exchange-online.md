@@ -19,7 +19,7 @@ audience: Admin
 
 # Deprecation of Basic authentication in Exchange Online
 
-For many years, applications have used Basic authentication (also known as Legacy authentication) to connect to servers, services, and API endpoints. Basic authentication simply means the application sends a username and password with every request, and those credentials are also often stored or saved on the device. Traditionally, Basic authentication is enabled by default on most servers or services, and is simple to set up.
+For many years, applications have used Basic authentication to connect to servers, services, and API endpoints. Basic authentication simply means the application sends a username and password with every request, and those credentials are also often stored or saved on the device. Traditionally, Basic authentication is enabled by default on most servers or services, and is simple to set up.
 
 Simplicity isn't at all bad, but Basic authentication makes it easier for attackers to capture user credentials (particularly if the credentials are not protected by TLS), which increases the risk of those stolen credentials being reused against other endpoints or services. Furthermore, the enforcement of multifactor authentication (MFA) is not simple or in some cases, possible when Basic authentication remains enabled.
 
@@ -61,7 +61,8 @@ In 2020, we released OAuth 2.0 support for POP, IMAP, and SMTP AUTH. Updates to 
 
 Application developers who have built apps that send, read, or otherwise process email using these protocols will be able to keep the same protocol, but need to implement secure, Modern authentication experiences for their users. This functionality is built on top of [Microsoft Identity platform v2.0](/azure/active-directory/develop/v2-overview) and supports access to Microsoft 365 email accounts.
 
-If your in-house application needs to access IMAP, POP and SMTP AUTH protocols in Exchange Online, follow these step-by-step instructions to implement OAuth 2.0 authentication:  [Authenticate an IMAP, POP, or SMTP connection using OAuth](/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth).
+If your in-house application needs to access IMAP, POP and SMTP AUTH protocols in Exchange Online, follow these step-by-step instructions to implement OAuth 2.0 authentication:  [Authenticate an IMAP, POP, or SMTP connection using OAuth](/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth). Additionaly use this powershell script [Get-IMAPAccesstoken.ps1](https://github.com/DanijelkMSFT/ThisandThat/blob/main/Get-IMAPAccessToken.ps1) to test IMAP access after your OAuth enablement on your own in a simple way including the shared mailbox use case. If this is successful, just make a confident next step talk to your application owner of your vendor or internal business partner. 
+
 
 Work with your vendor to update any apps or clients that you use that could be impacted.
 
@@ -76,6 +77,11 @@ We recommend using [Outlook for iOS and Android](https://products.office.com/out
 There are other mobile device email apps that support Modern authentication. The built-in email apps for all popular platforms typically support Modern authentication, so sometimes the solution is to verify that your device is running the latest version of the app. If the email app is current, but is still using Basic authentication, you might need to remove the account from the device and then add it back.
 
 If you're using [Microsoft Intune](/mem/intune/), you might be able to change the authentication type using the email profile you push or deploy to your devices. If you are using iOS devices (iPhones and iPads) you should take a look at [Add e-mail settings for iOS and iPadOS devices in Microsoft Intune](/mem/intune/configuration/email-settings-ios)
+
+> [!NOTE]
+> If your devices are using certificate-based authentication, they will be unaffected when Exchange Online turns off Basic auth in Exchange Online later this year. Only devices authenticating directly using Basic auth will be affected.
+> 
+> Certificate-based authentication is still legacy authentication and as such will be blocked by Azure AD conditional access policies that block legacy authentication. For more information see [Block legacy authentication - Azure Active Directory](/azure/active-directory/conditional-access/block-legacy-authentication)
 
 ### Exchange Online PowerShell
 

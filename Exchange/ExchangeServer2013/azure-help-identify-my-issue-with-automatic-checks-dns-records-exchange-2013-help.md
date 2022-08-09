@@ -22,8 +22,7 @@ _**Applies to:** Exchange Server 2013_
 
 One of the most common configuration setup issues is incorrectly configuring DNS records. You can use the automatic checks listed below to validate your configuration and help you update your environment.
 
-If you already have a user account, select Sign In. You don't need an Azure ID account. You might be asked for a user account again when the checks run. If so, your user account is in the format of *username*\@*yourFQDN* and your password.
-
+If you already have a user account, select Sign In. You don't need an Azure ID account. You might be asked for a user account again when the checks run. If so, your user account is in the format of _username_@_yourFQDN_ and your password.
 
 ## DNS Records Checks
 

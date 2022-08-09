@@ -21,7 +21,7 @@ _**Applies to:** Exchange Server 2013_
 
 A recovery database (RDB) is a special kind of mailbox database that allows you to mount and extract data from a restored mailbox database as part of a recovery operation. RDBs allow you to recover data from a backup or copy of a database without disrupting user access to current data.
 
-After you create an RDB, you can restore a mailbox database into the RDB by using a backup application or by copying a database and its log files into the RDB folder structure. Then you can use the [New-MailboxRestoreRequest](/powershell/module/exchange/New-MailboxRestoreRequest) cmdlet to extract data from the recovered database. Once extracted, the data can then be exported to a folder or merged into an existing mailbox.
+You can restore a mailbox database into the RDB by using a backup application or by copying a database and its log files into the RDB folder structure. Then you can use the [New-MailboxRestoreRequest](/powershell/module/exchange/New-MailboxRestoreRequest) cmdlet to extract data from the recovered database. Once extracted, the data can then be exported to a folder or merged into an existing mailbox.
 
 For additional management tasks related to RDBs, see [Recovery databases](recovery-databases-exchange-2013-help.md).
 
@@ -31,25 +31,25 @@ For additional management tasks related to RDBs, see [Recovery databases](recove
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox recovery" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
-- Some backup applications have the ability to restore Exchange data directly to a recovery database. Windows Server Backup can restore only file-level backups to a recovery database. It cannot be used to restore application-level backups to a recovery database.
+- Some backup applications have the ability to restore Exchange data directly to a recovery database. Windows Server Backup can restore only file-level backups to a recovery database. It can't be used to restore application-level backups to a recovery database.
 
 - The database and log files containing the recovered data must be restored or copied into the RDB folder structure. Do not rename the .edb files.
 
-- The database must be in a clean shutdown state. If the previously restored databases is in a dirty shutdown state. You must use **Eseutil /R** to put restored databases into a clean shutdown state. If you are running Exchange 2019 and utilizing a MCDB you must use **Eseutil /R /i**
+- The database must be in a clean shutdown state. If the previously restored database is in a dirty shutdown state. You must use **Eseutil /R** to put restored databases into a clean shutdown state. If you're running Exchange 2019 and utilizing an MCDB, you must use **Eseutil /R /i**
 
 ## Use the Shell to recover data using a recovery database
 
-1. Copy a recovered database and its log files, or restore a database and it log files, to the location you will use for your recovery database.
+1. Copy a recovered database and its log files, or restore a database and it log files, to the location you'll use for your recovery database.
 
 2. Use Eseutil to bring that database into a clean shutdown state. In the following example, EXX is the log generation prefix for the database (for example, E00, E01, E02, and so on).
 
-    ```powershell
+    ```DOS
     Eseutil /R EXX /l <RDBLogFilePath> /d <RDBEdbFolder>
     ```
 
     The following example illustrates a log generation prefix of E01 and a recovery database and log file path of E:\\Databases\\RDB1:
 
-    ```powershell
+    ```DOS
     Eseutil /R E01 /l E:\Databases\RDB1 /d E:\Databases\RDB1
     ```
 
@@ -107,7 +107,7 @@ For additional management tasks related to RDBs, see [Recovery databases](recove
 
 ## How do you know this worked?
 
-To verify that you have successfully recovered the mailbox data, open the target mailbox using Outlook or Outlook Web App and verify that the recovered data is present.
+To verify that you've successfully recovered the mailbox data, open the target mailbox in Outlook or Outlook Web App and verify that the recovered data is present.
 
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

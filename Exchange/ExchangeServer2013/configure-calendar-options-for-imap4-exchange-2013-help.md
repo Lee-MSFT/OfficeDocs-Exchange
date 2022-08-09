@@ -54,7 +54,7 @@ This example enables IMAP4 users to access calendar information from the Interne
 Set-ImapSettings -CalendarItemRetrievalOption InternetUrl
 ```
 
-This example enables IMAP4 users to access calendar information by using a direct Outlook Web App URL. If you're using `Custom`, you must specify an Outlook Web App URL using the *OWAServerUrl* parameter.
+This example enables IMAP4 users to access calendar information by using a direct Outlook Web App URL. If you're using `Custom`, you must specify an Outlook Web App URL using the _OWAServerUrl_ parameter.
 
 ```powershell
 Set-Imap4Settings -CalendarItemRetrievalOption Custom -OwaServerUrl "https://OwaServer01"
