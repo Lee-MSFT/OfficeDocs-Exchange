@@ -22,7 +22,7 @@ _**Applies to:** Exchange Server 2013_
 You can configure specific anti-spam settings on individual mailboxes that are different than the anti-spam settings that are applied to the rest of the mailboxes in your Exchange organization. When you configure an anti-spam setting on a mailbox, that setting overrides the corresponding organization-wide content filtering or organization configuration anti-spam setting.
 
 > [!NOTE]
-> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecating-support-for-smartscreen-in-outlook-and-exchange/ba-p/605332">Deprecating support for SmartScreen in Outlook and Exchange</A>.
+> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see [Deprecating support for SmartScreen in Outlook and Exchange](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecating-support-for-smartscreen-in-outlook-and-exchange/ba-p/605332).
 
 ## What do you need to know before you begin?
 

@@ -48,7 +48,7 @@ We recommend that you don't modify the default setting in most cases. However, y
    Notepad %ExchangeInstallPath%Bin\MSExchangeMailboxAssistants.exe.config
    ```
 
-2. Locate the *\</appsettings\>* key at the end of the file, and paste the following key before the *\</appsettings\>* key:
+2. Locate the _\</appsettings\>_ key at the end of the file, and paste the following key before the _\</appsettings\>_ key:
 
    ```xml
    <add key="IncludeSafeDomains" value="true" />

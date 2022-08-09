@@ -59,13 +59,11 @@ Set-TransportService Mailbox01 -AgentLogPath "D:\Anti-Spam Agent Log" -AgentLogM
 ```
 
 > [!NOTE]
-> <UL>
-> <LI>
-> <P>If you set the <EM>AgentLogPath</EM> parameter to the value <CODE>$null</CODE>, you effectively disable agent logging. However, if you set <EM>AgentLogPath</EM> to <CODE>$null</CODE> when the value of the <EM>AgentLogEnabled</EM> parameter is <CODE>$true</CODE>, event log errors are generated. The preferred method to disable agent logging is to set <EM>AgentLogEnabled</EM> to <CODE>$false</CODE>.</P>
-> <LI>
-> <P>Setting the <EM>AgentLogMaxAge</EM> parameter to the value <CODE>00:00:00</CODE> prevents the automatic removal of agent log files because of their age.</P></LI></UL>
+>
+> - If you set the _AgentLogPath_ parameter to the value `$null`, you effectively disable agent logging. However, if you set _AgentLogPath_ to `$null` when the value of the _AgentLogEnabled_ parameter is `$true`, event log errors are generated. The preferred method to disable agent logging is to set _AgentLogEnabled_ to `$false`.
+> - Setting the _AgentLogMaxAge_ parameter to the value `00:00:00` prevents the automatic removal of agent log files because of their age.
 
-For detailed syntax and parameter information, see the *AgentLog* parameters in [Set-TransportService](/powershell/module/exchange/Set-TransportService).
+For detailed syntax and parameter information, see the _AgentLog_ parameters in [Set-TransportService](/powershell/module/exchange/Set-TransportService).
 
 ## How do you know this worked?
 

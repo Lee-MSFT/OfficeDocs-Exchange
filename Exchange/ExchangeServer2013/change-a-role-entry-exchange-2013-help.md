@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Admins can learn how to change role entries in Exchange Server.
 ---
 
 # Change a role entry
@@ -23,10 +24,10 @@ Each management role entry on a management role represents a single cmdlet. By a
 You can't modify the role entries on built-in management roles.
 
 > [!NOTE]
-> This topic doesn't discuss how to modify unscoped management role entries on an unscoped management role. For more information about how to modify unscoped role entries, see <A href="create-a-role-exchange-2013-help.md">Create a role</A>.
+> This topic doesn't discuss how to modify unscoped management role entries on an unscoped management role. For more information about how to modify unscoped role entries, see [Create a role](create-a-role-exchange-2013-help.md).
 
 > [!WARNING]
-> To add or remove parameters from a role entry, you must use the <EM>AddParameter</EM> or <EM>RemoveParameter</EM> parameters. If you omit the <EM>AddParameter</EM> or <EM>RemoveParameter</EM> parameter when you run the <STRONG>Set-ManagementRoleEntry</STRONG> cmdlet, only the parameters you specify using the <EM>Parameters</EM> parameter will be included in the role entry. All other parameters on the role entry will be removed.
+> To add or remove parameters from a role entry, you must use the _AddParameter_ or _RemoveParameter_ parameters. If you omit the _AddParameter_ or _RemoveParameter_ parameter when you run the **Set-ManagementRoleEntry** cmdlet, only the parameters you specify using the _Parameters_ parameter will be included in the role entry. All other parameters on the role entry will be removed.
 
 Looking for other management tasks related to roles? Check out [Advanced permissions](advanced-permissions-exchange-2013-help.md).
 
@@ -49,7 +50,7 @@ Looking for other management tasks related to roles? Check out [Advanced permiss
 
 ## Use the Shell to add one or more parameters to a role entry
 
-To add parameters to a role entry, you need to specify the parameters you want to add using the *Parameters* parameter. You then need to specify the *AddParameter* parameter to indicate that you want to perform an add operation.
+To add parameters to a role entry, you need to specify the parameters you want to add using the _Parameters_ parameter. You then need to specify the _AddParameter_ parameter to indicate that you want to perform an add operation.
 
 To add parameters to a role entry, use the following syntax.
 
@@ -57,7 +58,7 @@ To add parameters to a role entry, use the following syntax.
 Set-ManagementRoleEntry <role name>\<cmdlet> -Parameters <parameter 1>, <parameter 2>, <parameter...> -AddParameter
 ```
 
-This example adds the *EmailAddresses* and *Type* parameters to the **Set-Mailbox** cmdlet on the Recipient Administrators role.
+This example adds the _EmailAddresses_ and _Type_ parameters to the **Set-Mailbox** cmdlet on the Recipient Administrators role.
 
 ```powershell
 Set-ManagementRoleEntry "Recipient Administrators\Set-Mailbox" -Parameters EmailAddresses, Type -AddParameter
@@ -67,7 +68,7 @@ For detailed syntax and parameter information, see [Set-ManagementRoleEntry](/po
 
 ## Use the Shell to remove one or more parameters from a role entry
 
-To remove parameters from a role entry, you need to specify the parameters you want to remove using the *Parameters* parameter. You then need to specify the *RemoveParameter* parameter to indicate that you want to perform a remove operation.
+To remove parameters from a role entry, you need to specify the parameters you want to remove using the _Parameters_ parameter. You then need to specify the _RemoveParameter_ parameter to indicate that you want to perform a remove operation.
 
 To remove parameters from a role entry, use the following syntax.
 
@@ -75,7 +76,7 @@ To remove parameters from a role entry, use the following syntax.
 Set-ManagementRoleEntry <role name>\<cmdlet> -Parameters <parameter 1>, <parameter 2>, <parameter...> -RemoveParameter
 ```
 
-This example removes the *Port*, *ProtocolLoggingLevel*, and *SmartHostAuthMechanism* parameters from the **Set-SendConnector** cmdlet on the Tier 1 Server Administrators role.
+This example removes the _Port_, _ProtocolLoggingLevel_, and _SmartHostAuthMechanism_ parameters from the **Set-SendConnector** cmdlet on the Tier 1 Server Administrators role.
 
 ```powershell
 Set-ManagementRoleEntry "Tier 1 Server Administrators\Set-SendConnector" -Parameters Port, ProtocolLoggingLevel, SmartHostAuthMechanism -RemoveParameter
@@ -85,7 +86,7 @@ For detailed syntax and parameter information, see [Set-ManagementRoleEntry](/po
 
 ## Use the Shell to remove all parameters from a role entry
 
-To remove all the parameters from a role entry, you need to specify the value `$Null` on the *Parameters* parameter. You don't need to include the *RemoveParameters* parameter.
+To remove all the parameters from a role entry, you need to specify the value `$Null` on the _Parameters_ parameter. You don't need to include the _RemoveParameters_ parameter.
 
 Removing all the parameters from a role entry is most useful when you want to make only a few parameters available on a cmdlet and exclude all of the other parameters. If you don't want the role to have access to a cmdlet, remove the associated role entry from the role completely instead of just removing the parameters. For more information about how to remove a role entry from a role, see [Remove a role entry from a role](remove-a-role-entry-from-a-role-exchange-2013-help.md).
 
@@ -108,7 +109,7 @@ For detailed syntax and parameter information, see [Set-ManagementRoleEntry](/po
 
 ## Use the Shell to apply a specific set of parameters
 
-If you want only a specific set of parameters to be included on a role entry, specify the *Parameters* parameter only. Don't include the *AddParameter* or *RemoveParameter* parameters. When you specify only the *Parameters* parameter, only the parameters you specify in the command are included on the role entry. All other parameters are removed.
+If you want only a specific set of parameters to be included on a role entry, specify the _Parameters_ parameter only. Don't include the _AddParameter_ or _RemoveParameter_ parameters. When you specify only the _Parameters_ parameter, only the parameters you specify in the command are included on the role entry. All other parameters are removed.
 
 To specify a specific set of parameters, use the following syntax.
 
@@ -116,7 +117,7 @@ To specify a specific set of parameters, use the following syntax.
 Set-ManagementRoleEntry <role name>\<cmdlet> -Parameters <parameter 1>, <parameter 2>, <parameter...>
 ```
 
-This example includes only the *Identity*, *DisplayName*, *MissedCallNotificationEnabled*, and *PersonalAuthAttendantEnabled* parameters on the **Set-UMMailbox** cmdlet on the Seattle Mail Recipients role.
+This example includes only the _Identity_, _DisplayName_, _MissedCallNotificationEnabled_, and _PersonalAuthAttendantEnabled_ parameters on the **Set-UMMailbox** cmdlet on the Seattle Mail Recipients role.
 
 ```powershell
 Set-ManagementRoleEntry "Seattle Mail Recipients\Set-UMMailbox" -Parameters Identity, DisplayName, MissedCallNotificationEnabled, PersonalAutoAttendantEnabled

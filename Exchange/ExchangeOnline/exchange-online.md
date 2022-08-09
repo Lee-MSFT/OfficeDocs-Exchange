@@ -42,6 +42,8 @@ Exchange admin center is now available at the new URL address [https://admin.exc
 
 > [!NOTE]
 > You can still access the [Classic Exchange admin center](https://outlook.office365.com/ecp) and sign in using your credentials.
+> 
+> Not all settings will be available if you are using [Azure AD groups to manage role assignments](/azure/active-directory/roles/groups-concept#known-issues) - see Known issues.
 
 ## Help for Microsoft 365 admins
 

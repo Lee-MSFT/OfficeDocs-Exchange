@@ -384,6 +384,7 @@
 #### [Configure overrides](../high-availability/managed-availability/configure-overrides.md)
 ## [Server health](../server-health/server-health.md)
 ### [Workload management](../server-health/workload-management.md)
+## [TLS configuration best practices](../exchange-tls-configuration.md)
 ## [Emergency Mitigation Service](../exchange-emergency-mitigation-service.md)
 ## [Diagnostic Data](../diagnostic-data-exchange-server.md)
 ## [Antispam and antimalware](../antispam-and-antimalware/antispam-and-antimalware.md)
