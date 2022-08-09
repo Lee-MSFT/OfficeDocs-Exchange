@@ -103,7 +103,7 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Exchange Search service**
 
-    - Temporary files used by the Exchange Search service and Microsoft Filter Pack to perform file conversion in a sandboxed environment. These files are located in %SystemRoot%\\Temp\\OICE\___\<GUID\>_\\.
+    - Temporary files used by the Exchange Search service and Microsoft Filter Pack to perform file conversion in a sandboxed environment. These files are located in %SystemRoot%\\Temp\\OICE\_\\<GUID\>\\.
 
 - **Client Access servers**
 

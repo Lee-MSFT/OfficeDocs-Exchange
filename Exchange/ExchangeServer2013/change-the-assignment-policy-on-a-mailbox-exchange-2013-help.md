@@ -63,7 +63,7 @@ Set-Mailbox Brian -RoleAssignmentPolicy "Unified Messaging Users"
 > [!NOTE]
 > You can't use the EAC to change the assignment policy on a group of mailboxes all at once.
 
-This procedure makes use of pipelining, the **Where** cmdlet, and the *WhatIf* parameter. For more information about these concepts, see the following topics:
+This procedure makes use of pipelining, the **Where** cmdlet, and the _WhatIf_ parameter. For more information about these concepts, see the following topics:
 
 - [about_Pipelines](/powershell/module/microsoft.powershell.core/about/about_pipelines)
 
@@ -83,7 +83,7 @@ This example finds all the mailboxes assigned to the Redmond Users - No Voicemai
 Get-Mailbox | Where {$_.RoleAssignmentPolicy -Eq "Redmond Users - No Voicemail"} | Set-Mailbox -RoleAssignmentPolicy "Redmond Users - Voicemail Enabled"
 ```
 
-This example includes the *WhatIf* parameter so that you can see all the mailboxes that would be changed without committing any changes.
+This example includes the _WhatIf_ parameter so that you can see all the mailboxes that would be changed without committing any changes.
 
 ```powershell
 Get-Mailbox | Where {$_.RoleAssignmentPolicy -Eq "Redmond Users - No Voicemail"} | Set-Mailbox -RoleAssignmentPolicy "Redmond Users - Voicemail Enabled" -WhatIf

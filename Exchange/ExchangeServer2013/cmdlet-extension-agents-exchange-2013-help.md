@@ -106,16 +106,14 @@ The `Scripting agent` configuration file contains all the scripts that you want 
 ||`Name`|This attribute includes the name of the API call that's extending the cmdlet execution pipeline.|
 |`Common`|Not applicable|This element contains functions that can be used by any script in the configuration file.|
 
-Every Exchange 2013 server includes the file ScriptingAgentConfig.xml.sample in the \<*installation path*\>\\V15\\Bin\\CmdletExtensionAgents folder. This file must be renamed to ScriptingAgentConfig.xml on every Exchange 2013 server if you enable the Scripting Agent cmdlet extension agent. The sample configuration file contains sample scripts that you can use to help you understand how to add scripts to the configuration file.
+Every Exchange 2013 server includes the file ScriptingAgentConfig.xml.sample in the `%ExchangeInstallPath%CmdletExtensionAgents` folder. This file must be renamed to ScriptingAgentConfig.xml on every Exchange 2013 server if you enable the Scripting Agent cmdlet extension agent. The sample configuration file contains sample scripts that you can use to help you understand how to add scripts to the configuration file.
 
 After you add a script to the configuration file, or if you make a change to the configuration file, you must update the file on every Exchange 2013 server in your organization. This must be done to make sure that each server contains an up-to-date version of the scripts that the `Scripting Agent` cmdlet extension agent runs.
 
 Some characters typically used in scripts also have a special meaning in XML. To use these characters in your script, use escape sequences. For example, the following characters use an escape sequence:
 
 - Instead of a greater than sign ( `>` ), use `&gt;`
-
 - Instead of a less than sign ( `<` ), use `$lt;`
-
 - Instead of an ampersand ( `&` ), use `&amp;`
 
 ## Enable the Scripting agent

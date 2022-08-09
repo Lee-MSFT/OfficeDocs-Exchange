@@ -43,9 +43,7 @@ The location of the queue database and the queue database transaction logs is co
 - If the target folder for the queue database or transaction logs doesn't exist, it will be created for you if the parent folder has the following permissions applied to it:
 
   - Network Service: Full Control
-
   - System: Full Control
-
   - Administrators: Full Control
 
 - Any customized per-server settings you make in Exchange XML application configuration files, for example, web.config files on Client Access servers or the EdgeTransport.exe.config file on Mailbox servers, will be overwritten when you install an Exchange Cumulative Update (CU). Make sure that you save this information so you can easily reconfigure your server after the install. Reconfigure these settings after you install an Exchange CU.
@@ -136,7 +134,7 @@ Use the following procedure to move the existing queue database and transaction 
 
 6. Move the existing database files Mail.que and Trn.chk from the original location to the new location.
 
-7. Move the existing transaction log files Trn.log, Trntmp.log, Trn*nnnnn*.log, Trnres00001.jrs, Trnres00002.jrs, and Temp.edb from the old location to the new location.
+7. Move the existing transaction log files Trn.log, Trntmp.log, Trn_nnnnn_.log, Trnres00001.jrs, Trnres00002.jrs, and Temp.edb from the old location to the new location.
 
 8. Start the Microsoft Exchange Transport service by running the following command:
 
@@ -149,9 +147,7 @@ Use the following procedure to move the existing queue database and transaction 
 To verify that you successfully moved the existing queue database and transaction logs to the new location, take the following steps:
 
 1. Verify the queue database files Mail.que and Trn.chk exist at the new location.
-
 2. Verify the transaction log files Trn.log, Trntmp.log, Trnres00001.jrs, Trnres00002.jrs, and Temp.edb files exist at the new location.
-
 3. Verify there are no queue database or transaction log files at the original location.
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

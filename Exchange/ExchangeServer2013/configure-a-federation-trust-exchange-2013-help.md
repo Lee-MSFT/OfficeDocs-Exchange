@@ -22,7 +22,7 @@ _**Applies to:** Exchange Server 2013_
 A federation trust establishes a trust relationship between a Microsoft Exchange 2013 organization and the Azure Active Directory authentication system. By configuring a federation trust, you can configure federated sharing with other federated Exchange organizations to share calendar free/busy information among recipients. Federated sharing can be configured between two federated Exchange 2013 organizations or between a federated Exchange 2013 organization and federated Exchange 2010 organizations. You can also set up sharing with a Microsoft 365 or Office 365 organization.
 
 > [!NOTE]
-> Creating a federation trust is one of several steps in setting up federated sharing in your Exchange organization. To review all the steps, see <A href="configure-federated-sharing-exchange-2013-help.md">Configure federated sharing</A>.
+> Creating a federation trust is one of several steps in setting up federated sharing in your Exchange organization. To review all the steps, see [Configure federated sharing](configure-federated-sharing-exchange-2013-help.md).
 
 For additional management tasks related to federation, see [Federation procedures](federation-procedures-exchange-2013-help.md).
 
@@ -48,28 +48,26 @@ For additional management tasks related to federation, see [Federation procedure
   The following Exchange organizations use the business instance of the Azure AD authentication system by default:
 
   - Exchange 2013 organizations by using the **Enable federation trust** wizard and self-signed certificates for a federation trust.
-
   - Exchange 2010 SP1 or later organizations by using the **New Federation Trust** wizard and self-signed certificates for a federation trust.
-
   - Exchange organizations hosted by Microsoft 365 and Office 365.
 
-    The following Exchange organizations use the consumer instance of the Azure AD authentication system by default:
+  The following Exchange organizations use the consumer instance of the Azure AD authentication system by default:
 
   - Release to manufacturing (RTM) version of Exchange 2010 organizations using certificates issued by third-party certification authorities.
 
-    We recommend that all Exchange organizations use the business instance of the Azure AD authentication system for federation trusts. Before configuring federated sharing between the two Exchange organizations, you need to verify which Azure AD authentication system instance each Exchange organization is using for any existing federation trusts. To determine which Azure AD authentication system instance an Exchange organization is using for an existing federation trust, run the following Shell command.
+  We recommend that all Exchange organizations use the business instance of the Azure AD authentication system for federation trusts. Before configuring federated sharing between the two Exchange organizations, you need to verify which Azure AD authentication system instance each Exchange organization is using for any existing federation trusts. To determine which Azure AD authentication system instance an Exchange organization is using for an existing federation trust, run the following Shell command.
 
-    ```powershell
-    Get-FederationInformation -DomainName <hosted Exchange domain namespace>
-    ```
+  ```powershell
+  Get-FederationInformation -DomainName <hosted Exchange domain namespace>
+  ```
 
-    The business instance returns a value of `<uri:federation:MicrosoftOnline>` for the *TokenIssuerURIs* parameter.
+  The business instance returns a value of `<uri:federation:MicrosoftOnline>` for the _TokenIssuerURIs_ parameter.
 
-    The consumer instance returns a value of `<uri:WindowsLiveID>` for the *TokenIssuerURIs* parameter.
+  The consumer instance returns a value of `<uri:WindowsLiveID>` for the _TokenIssuerURIs_ parameter.
 
-    To configure federated sharing with an Exchange organization that has an existing federation trust that's using the business instance of the Azure AD authentication system, follow the steps in this topic. These steps are all you need to perform to create federation trusts that can be used to enable federated sharing between two Exchange 2013 organizations or between an Exchange 2013 organization and an Exchange 2010 organization that's already using the business instance of the Azure AD authentication system.
+  To configure federated sharing with an Exchange organization that has an existing federation trust that's using the business instance of the Azure AD authentication system, follow the steps in this topic. These steps are all you need to perform to create federation trusts that can be used to enable federated sharing between two Exchange 2013 organizations or between an Exchange 2013 organization and an Exchange 2010 organization that's already using the business instance of the Azure AD authentication system.
 
-    To configure federated sharing between your Exchange 2013 organization and an Exchange organization that has an existing federation trust that's using the consumer instance of the Azure AD authentication system , the Exchange organization using the consumer instance should install Exchange 2010 SP2 or later, or upgrade to Exchange 2013. If you decide to install Exchange 2010 SP2 or later, use the **New Federation Trust** wizard to remove and re-create the existing federated domains and federation trusts. When the federation trusts are re-created, the business instance of the Azure AD authentication system will be used.
+  To configure federated sharing between your Exchange 2013 organization and an Exchange organization that has an existing federation trust that's using the consumer instance of the Azure AD authentication system , the Exchange organization using the consumer instance should install Exchange 2010 SP2 or later, or upgrade to Exchange 2013. If you decide to install Exchange 2010 SP2 or later, use the **New Federation Trust** wizard to remove and re-create the existing federated domains and federation trusts. When the federation trusts are re-created, the business instance of the Azure AD authentication system will be used.
 
 ## Use the EAC to create and configure a federation trust
 
@@ -86,12 +84,12 @@ For additional management tasks related to federation, see [Federation procedure
 6. In **Select Accepted Domains**, select the primary shared domain from the list, and then click **OK**.
 
     > [!NOTE]
-    > The domain you select will be used to configure the OrgID for the federation trust. For more information about the OrgID, see <A href="federation-exchange-2013-help.md">Federation</A>.
+    > The domain you select will be used to configure the OrgID for the federation trust. For more information about the OrgID, see [Federation](federation-exchange-2013-help.md).
 
 7. Make a note of the federated domain proof that's generated for the primary shared domain. You'll use this string to create a TXT record on your public DNS server.
 
     > [!IMPORTANT]
-    > The federated domain proof is a string of alphanumeric characters. To avoid input errors, we recommend that you copy the string from the EAC, and paste it into a text editor such as Notepad. You can then copy it from the text editor to the Clipboard, and then paste it into the <STRONG>Text</STRONG> field when creating the TXT record. If the TXT record is created by using an incorrect federated domain proof string, the Azure AD authentication system won't be able to verify proof of domain ownership, and you won't be able to add it to the federated organization identifier.
+    > The federated domain proof is a string of alphanumeric characters. To avoid input errors, we recommend that you copy the string from the EAC, and paste it into a text editor such as Notepad. You can then copy it from the text editor to the Clipboard, and then paste it into the **Text** field when creating the TXT record. If the TXT record is created by using an incorrect federated domain proof string, the Azure AD authentication system won't be able to verify proof of domain ownership, and you won't be able to add it to the federated organization identifier.
 
 8. In **Step 2**, click **Add** ![Add Icon.](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon") to add additional domains to the federated trust for email addresses that will be used by users in your organization that require federated sharing features. For example, if you have users that use a subdomain in their email address such as sales.contoso.com, you would add the sales.contoso.com domain to the federation trust.
 
@@ -148,7 +146,7 @@ For additional management tasks related to federation, see [Federation procedure
 
    **Notes**:
 
-   - Each domain or subdomain that's configured for the federation trust requires a proof of domain ownership TXT record, so you might need to run this command multiple times using different *DomainName* values.
+   - Each domain or subdomain that's configured for the federation trust requires a proof of domain ownership TXT record, so you might need to run this command multiple times using different _DomainName_ values.
 
    - We recommend that you copy the domain proof string by right-clicking in the Shell, selecting **Mark**, selecting the **Proof** value, and then pressing Enter so you can use it when you create the TXT record. If you create the TXT record with an incorrect federated domain proof string, the Azure AD authentication system can't verify your ownership of the domain, and you won't be able to add it to the federated organization identifier.
 
@@ -203,7 +201,7 @@ To further verify that you have successfully created and configured the federati
    Get-FederationTrust | Format-List
    ```
 
-2. Replace *\<PrimarySharedDomain\>* with your primary shared domain, and run the following Shell command to verify that federation information can be retrieved from your organization.
+2. Replace _\<PrimarySharedDomain\>_ with your primary shared domain, and run the following Shell command to verify that federation information can be retrieved from your organization.
 
    ```powershell
    Get-FederationInformation -DomainName <PrimarySharedDomain>

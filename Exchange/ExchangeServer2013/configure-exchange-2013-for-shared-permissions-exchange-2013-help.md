@@ -84,7 +84,7 @@ To configure shared permissions on the Organization Management role group, do th
     ```
 
     > [!NOTE]
-    > The role group (in this procedure, the Active Directory Administrators role group) that has delegating role assignments for the Mail Recipient Creation role and Security Group Creation and Membership role must be assigned the Role Management role to run the <STRONG>New-ManagementRoleAssignment</STRONG> cmdlet. The role assignee that can delegate the Role Management role must assign that role to the Active Directory Administrators role group.
+    > The role group (in this procedure, the Active Directory Administrators role group) that has delegating role assignments for the Mail Recipient Creation role and Security Group Creation and Membership role must be assigned the Role Management role to run the **New-ManagementRoleAssignment** cmdlet. The role assignee that can delegate the Role Management role must assign that role to the Active Directory Administrators role group.
 
 2. Add regular role assignments for the Mail Recipient Creation role to the Organization Management and Recipient Management role groups using the following commands.
 
@@ -106,17 +106,17 @@ For detailed syntax and parameter information, see [New-ManagementRoleAssignment
 You can optionally remove the permissions granted to Active Directory administrators if you no longer want them to be able to create or manage Active Directory objects using the Exchange management tools. If you want to remove permissions from Active Directory administrators, perform this procedure.
 
 > [!NOTE]
-> Although you can remove permissions for Active Directory administrators to manage Active Directory objects using the Exchange management tools, Active Directory administrators can continue to manage Active Directory objects using Active Directory management tools, if their Active Directory permissions allow it. They won't, however, be able to manage Exchange-specific attributes on Active Directory objects. For more information, see <A href="understanding-split-permissions-exchange-2013-help.md">Understanding split permissions</A>.
+> Although you can remove permissions for Active Directory administrators to manage Active Directory objects using the Exchange management tools, Active Directory administrators can continue to manage Active Directory objects using Active Directory management tools, if their Active Directory permissions allow it. They won't, however, be able to manage Exchange-specific attributes on Active Directory objects. For more information, see [Understanding split permissions](understanding-split-permissions-exchange-2013-help.md).
 
 To remove Exchange-related split permissions from Active Directory administrators, do the following:
 
-1. Remove the regular and delegating role assignments that assign the Mail Recipient Creation role to the role group or universal security group (USG) that contains the Active Directory administrators as members using the following command. This command uses the Active Directory Administrators role group as an example. The *WhatIf* switch lets you see what role assignments will be removed. Remove the *WhatIf* switch, and run the command again to remove the role assignments.
+1. Remove the regular and delegating role assignments that assign the Mail Recipient Creation role to the role group or universal security group (USG) that contains the Active Directory administrators as members using the following command. This command uses the Active Directory Administrators role group as an example. The _WhatIf_ switch lets you see what role assignments will be removed. Remove the _WhatIf_ switch, and run the command again to remove the role assignments.
 
    ```powershell
    Get-ManagementRoleAssignment -Role "Mail Recipient Creation" | Where {$_.RoleAssigneeName -EQ "Active Directory Administrators"} | Remove-ManagementRoleAssignment -WhatIf
    ```
 
-2. Remove the regular and delegating role assignments that assign the Security Group Creation and Membership role to the role group or USG that contains the Active Directory administrators as members using the following command. This command uses the Active Directory Administrators role group as an example. The *WhatIf* switch lets you see what role assignments will be removed. Remove the *WhatIf* switch, and run the command again to remove the role assignments.
+2. Remove the regular and delegating role assignments that assign the Security Group Creation and Membership role to the role group or USG that contains the Active Directory administrators as members using the following command. This command uses the Active Directory Administrators role group as an example. The _WhatIf_ switch lets you see what role assignments will be removed. Remove the _WhatIf_ switch, and run the command again to remove the role assignments.
 
    ```powershell
    Get-ManagementRoleAssignment -Role "Security Group Creation and Membership" | Where {$_.RoleAssigneeName -EQ "Active Directory Administrators"} | Remove-ManagementRoleAssignment -WhatIf
@@ -133,7 +133,7 @@ You need to be assigned permissions before you can perform this procedure or pro
 To switch from Active Directory split permissions to Exchange 2013 shared permissions, you must rerun Exchange Setup to disable Active Directory split permissions in the Exchange organization, and then create role assignments between a role group and the Mail Recipient Creation role and Security Group Creation and Membership role. In the default shared permissions configuration, the Organization Management role group contains each of these roles. Because of this, the Organization Management role group is in this procedure.
 
 > [!IMPORTANT]
-> The setup.com command in this procedure makes changes to Active Directory. You must use an account that has the permissions required to make these changes. This account might not be the same account that has permissions to create role assignments using the <STRONG>New-ManagementRoleAssignment</STRONG> cmdlet. Use the account, or accounts, with the permissions necessary to successfully complete each step in this procedure.
+> The setup.com command in this procedure makes changes to Active Directory. You must use an account that has the permissions required to make these changes. This account might not be the same account that has permissions to create role assignments using the **New-ManagementRoleAssignment** cmdlet. Use the account, or accounts, with the permissions necessary to successfully complete each step in this procedure.
 
 To switch from Active Directory split permissions to shared permissions, do the following:
 

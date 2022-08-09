@@ -2,6 +2,78 @@
 
 
 
+## Week of August 01, 2022
+
+
+| Published On |Topic title | Change |
+|------|------------|--------|
+| 8/1/2022 | [Receive connector authentication mechanisms: Exchange 2013 Help](/Exchange/receive-connector-authentication-mechanisms-exchange-2013-help) | modified |
+| 8/1/2022 | [Receive connector permissions: Exchange 2013 Help](/Exchange/receive-connector-permissions-exchange-2013-help) | modified |
+| 8/1/2022 | [Recipient resolution: Exchange 2013 Help](/Exchange/recipient-resolution-exchange-2013-help) | modified |
+| 8/1/2022 | [Recipients: Exchange 2013 Help](/Exchange/recipients-exchange-2013-help) | modified |
+| 8/1/2022 | [Recoverable Items folder: Exchange 2013 Help](/Exchange/recoverable-items-folder-exchange-2013-help) | modified |
+| 8/1/2022 | [Recreating arbitration mailboxes: Exchange 2013 Help](/Exchange/recreating-arbitration-mailboxes-exchange-2013-help) | modified |
+| 8/1/2022 | [Remote domains: Exchange 2013 Help](/Exchange/remote-domains-exchange-2013-help) | modified |
+| 8/1/2022 | [Reseed the search catalog: Exchange 2013 Help](/Exchange/reseed-the-search-catalog-exchange-2013-help) | modified |
+| 8/1/2022 | [Role management permissions: Exchange 2013 Help](/Exchange/role-management-permissions-exchange-2013-help) | modified |
+| 8/1/2022 | [Route mail between Active Directory sites: Exchange 2013 Help](/Exchange/route-mail-between-active-directory-sites-exchange-2013-help) | modified |
+| 8/1/2022 | [Safety Net: Exchange 2013 Help](/Exchange/safety-net-exchange-2013-help) | modified |
+| 8/1/2022 | [Scenario: Deploying address book policies: Exchange 2013 Help](/Exchange/scenario-deploying-address-book-policies-exchange-2013-help) | modified |
+| 8/1/2022 | [Secondary dial plans: Exchange 2013 Help](/Exchange/secondary-dial-plans-exchange-2013-help) | modified |
+| 8/1/2022 | [Server health and performance: Exchange 2013 Help](/Exchange/server-health-and-performance-exchange-2013-help) | modified |
+| 8/1/2022 | [Server health and performance permissions: Exchange 2013 Help](/Exchange/server-health-and-performance-permissions-exchange-2013-help) | modified |
+| 8/1/2022 | [Shadow redundancy: Exchange 2013 Help](/Exchange/shadow-redundancy-exchange-2013-help) | modified |
+| 8/1/2022 | [Sharing and collaboration permissions: Exchange 2013 Help](/Exchange/sharing-and-collaboration-permissions-exchange-2013-help) | modified |
+| 8/1/2022 | [Sharing: Exchange 2013 Help](/Exchange/sharing-exchange-2013-help) | modified |
+| 8/1/2022 | [Site mailboxes: Exchange 2013 Help](/Exchange/site-mailboxes-exchange-2013-help) | modified |
+| 8/1/2022 | [Spam Confidence Level Threshold: Exchange 2013 Help](/Exchange/spam-confidence-level-threshold-exchange-2013-help) | modified |
+| 8/1/2022 | [Switchovers and Failovers: Exchange 2013 Help](/Exchange/switchovers-and-failovers-exchange-2013-help) | modified |
+| 8/1/2022 | [Trusted root certification authorities for federation trusts](/Exchange/trusted-root-certification-authorities-for-federation-trusts-exchange-2013-help) | modified |
+| 8/1/2022 | [UM languages, prompts, and greetings: Exchange 2013 Help](/Exchange/um-languages-prompts-and-greetings-exchange-2013-help) | modified |
+| 8/1/2022 | [UM protocols, ports, and services: Exchange 2013 Help](/Exchange/um-protocols-ports-and-services-exchange-2013-help) | modified |
+| 8/1/2022 | [Understanding Exchange 2013 page zeroing: Exchange 2013 Help](/Exchange/understanding-exchange-2013-page-zeroing-exchange-2013-help) | modified |
+| 8/1/2022 | [Understanding exclusive scopes: Exchange 2013 Help](/Exchange/understanding-exclusive-scopes-exchange-2013-help) | modified |
+| 8/1/2022 | [Understanding management role assignment policies: Exchange 2013 Help](/Exchange/understanding-management-role-assignment-policies-exchange-2013-help) | modified |
+| 8/1/2022 | [Understanding management role groups: Exchange 2013 Help](/Exchange/understanding-management-role-groups-exchange-2013-help) | modified |
+| 8/1/2022 | [Understanding management role scope filters: Exchange 2013 Help](/Exchange/understanding-management-role-scope-filters-exchange-2013-help) | modified |
+| 8/1/2022 | [Understanding management roles: Exchange 2013 Help](/Exchange/understanding-management-roles-exchange-2013-help) | modified |
+| 8/1/2022 | [Understanding multiple-forest permissions: Exchange 2013 Help](/Exchange/understanding-multiple-forest-permissions-exchange-2013-help) | modified |
+| 8/1/2022 | [Understand permissions coexistence with Exchange 2007 and Exchange 2010](/Exchange/understanding-permissions-coexistence-with-exchange-2007-and-exchange-2010-exchange-2013-help) | modified |
+| 8/1/2022 | [Unified Messaging: Exchange 2013 Help](/Exchange/unified-messaging-exchange-2013-help) | modified |
+| 8/1/2022 | [Unified Messaging permissions: Exchange 2013 Help](/Exchange/unified-messaging-permissions-exchange-2013-help) | modified |
+| 8/1/2022 | [Unsupported characters for Exchange 2013 object names: Exchange 2013 Help](/Exchange/unsupported-characters-for-exchange-2013-object-names-exchange-2013-help) | modified |
+| 8/1/2022 | [Upgrade from Exchange 2007  to Exchange 2013: Exchange 2013 Help](/Exchange/upgrade-from-exchange-2007-to-exchange-2013-exchange-2013-help) | modified |
+| 8/1/2022 | [Use the Exchange Management Shell to manage queues: Exchange 2013 Help](/Exchange/use-the-exchange-management-shell-to-manage-queues-exchange-2013-help) | modified |
+| 8/1/2022 | [Use transport rules to inspect message attachments: Exchange 2013 Help](/Exchange/use-transport-rules-to-inspect-message-attachments-exchange-2013-help) | modified |
+| 8/1/2022 | [Using AD FS claims-based authentication with Outlook Web App and EAC](/Exchange/using-ad-fs-claims-based-authentication-with-outlook-web-app-and-eac-exchange-2013-help) | modified |
+| 8/1/2022 | [Using OAuth authentication to support eDiscovery in Exchange hybrid deployment](/Exchange/using-oauth-authentication-to-support-ediscovery-in-an-exchange-hybrid-deployment-exchange-2013-help) | modified |
+| 8/1/2022 | [Using Outlook Web App Web parts: Exchange 2013 Help](/Exchange/using-outlook-web-app-web-parts-exchange-2013-help) | modified |
+| 8/1/2022 | [Use the RollAlternateserviceAccountCredential.ps1 script in the shell](/Exchange/using-the-rollalternateserviceaccountcredential-ps1-script-in-the-shell-exchange-2013-help) | modified |
+| 8/1/2022 | [Use Windows Server Backup to back up and restore Exchange data](/Exchange/using-windows-server-backup-to-back-up-and-restore-exchange-data-exchange-2013-help) | modified |
+| 8/1/2022 | [View DLP policy detection reports: Exchange 2013 Help](/Exchange/view-dlp-policy-detection-reports-exchange-2013-help) | modified |
+| 8/1/2022 | [Voice architecture changes: Exchange 2013 Help](/Exchange/voice-architecture-changes-exchange-2013-help) | modified |
+| 8/1/2022 | [Voice mail greetings, announcements, menus, and prompts: Exchange 2013 Help](/Exchange/voice-mail-greetings-announcements-menus-and-prompts-exchange-2013-help) | modified |
+| 8/3/2022 | [Customize the Outlook Web App sign-In, language selection, and error pages](/Exchange/customize-the-outlook-web-app-sign-in-language-selection-and-error-pages-exchange-2013-help) | modified |
+| 8/3/2022 | [Deploying Exchange 2013 UM and Lync Server overview: Exchange 2013 Help](/Exchange/deploying-exchange-2013-um-and-lync-server-overview-exchange-2013-help) | modified |
+| 8/3/2022 | [Spam Confidence Level Threshold: Exchange 2013 Help](/Exchange/spam-confidence-level-threshold-exchange-2013-help) | modified |
+| 8/3/2022 | [Voice architecture changes: Exchange 2013 Help](/Exchange/voice-architecture-changes-exchange-2013-help) | modified |
+| 8/3/2022 | [How DLP rules are applied to evaluate messages: Exchange 2013 Help](/Exchange/dlp-rule-application-exchange-2013-help) | modified |
+| 8/5/2022 | [Exchange Server TLS configuration best practices](/Exchange/exchange-tls-configuration?view=exchserver-2019) | added |
+| 8/5/2022 | [Activate a mailbox database copy: Exchange 2013 Help](/Exchange/activate-a-mailbox-database-copy-exchange-2013-help) | modified |
+| 8/5/2022 | [Active Manager: Exchange 2013 Help](/Exchange/active-manager-exchange-2013-help) | modified |
+| 8/5/2022 | [Add a role to a user or USG: Exchange 2013 Help](/Exchange/add-a-role-to-a-user-or-usg-exchange-2013-help) | modified |
+| 8/5/2022 | [Anti-virus software in the operating system on Exchange servers](/Exchange/anti-virus-software-in-the-operating-system-on-exchange-servers-exchange-2013-help) | modified |
+| 8/5/2022 | [Autodiscover service for Exchange 2013](/Exchange/autodiscover-service-for-exchange-2013) | modified |
+| 8/5/2022 | [Automatic mailbox distribution: Exchange 2013 Help](/Exchange/automatic-mailbox-distribution-exchange-2013-help) | modified |
+| 8/5/2022 | [Backup, restore, and disaster recovery: Exchange 2013 Help](/Exchange/backup-restore-and-disaster-recovery-exchange-2013-help) | modified |
+| 8/5/2022 | [Built-in role groups: Exchange 2013 Help](/Exchange/built-in-role-groups-exchange-2013-help) | modified |
+| 8/5/2022 | [DLP procedures: Exchange 2013 Help](/Exchange/dlp-procedures-exchange-2013-help) | modified |
+| 8/5/2022 | [Exchange 2013 certificate management UI: Exchange 2013 Help](/Exchange/exchange-2013-certificate-management-ui-exchange-2013-help) | modified |
+| 8/5/2022 | [Information Rights Management logging: Exchange 2013 Help](/Exchange/information-rights-management-logging-exchange-2013-help) | modified |
+| 8/5/2022 | [Restore data using a recovery database: Exchange 2013 Help](/Exchange/restore-data-using-a-recovery-database-exchange-2013-help) | modified |
+| 8/5/2022 | [Telephony advisor for Exchange: Exchange 2013 Help](/Exchange/telephony-advisor-for-exchange-2013-exchange-2013-help) | modified |
+
+
 ## Week of July 25, 2022
 
 
@@ -336,11 +408,3 @@
 | 7/8/2022 | [Exchange 2013 deployment permissions reference: Exchange 2013 Help](/Exchange/exchange-2013-deployment-permissions-reference-exchange-2013-help) | modified |
 | 7/8/2022 | [Organization Management: Exchange 2013 Help](/Exchange/organization-management-exchange-2013-help) | modified |
 | 7/8/2022 | [Update Exchange organization when Daylight Saving Time or time zone changes](/Exchange/update-your-exchange-organization-when-daylight-saving-time-or-the-time-zone-changes-exchange-2013-help) | modified |
-
-
-## Week of June 27, 2022
-
-
-| Published On |Topic title | Change |
-|------|------------|--------|
-| 6/29/2022 | [Remove public folder deployment from Exchange Server 2013 or later versions](/Exchange/collaboration/public-folders/remove-public-folder-deployment-from-exchange-server-2013-later?view=exchserver-2016) | added |
