@@ -152,9 +152,11 @@ You can also use the following command to trace the Network Message ID value:
 
 The above command enables you to identify:
 - The Network Message ID
-- The specific messages this Network Message ID helps retrieve
+- The specific messages this Network Message ID helps in retrieving
 
-For example, in the above command, the **Get-MessageTrace** cmdlet retrieves trace information for messages that have the Message Trace ID **2bbad36aa4674c7ba82f4b307fff549f** and that are sent by john@contoso.com between June 13, 2022, and June 15, 2022. This cmdlet then pipes the retrieved trace information to the **Get-MessageTraceDetail** cmdlet.
+For example, in the above command, the value of Message Trace ID is **2bbad36aa4674c7ba82f4b307fff549f** which is effectively the Network Message ID. This value **2bbad36aa4674c7ba82f4b307fff549f** is used by the **Get-MessageTrace** cmdlet to retrieve trace information for messages that have this value and that are sent by john@contoso.com between June 13, 2022, and June 15, 2022.
+
+The **Get-MessageTrace** cmdlet then pipes the retrieved trace information to the **Get-MessageTraceDetail** cmdlet.
 
 #### Direction
 
