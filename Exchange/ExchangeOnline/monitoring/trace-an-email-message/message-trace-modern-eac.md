@@ -122,30 +122,7 @@ When you use **Message ID** to filter the results, be sure to include the full s
 
 #### Network Message ID
 
-Network Message ID is a unique message ID value that persists across copies of the message that may be created due to bifurcation, and across the message transport process. It's very dynamic and differs even for the copy of the message's specific instance. Therefore, each copied version of the instance will have a different Network Message ID.
-
-You can use the Network Message ID when you need to locate a specific instance of a message in Exchange online, for example, when analyzing message threads.
-
-You can locate Network Message ID in the following locations:
-
-- In [Message tracking logs](../../../ExchangeServer/mail-flow/transport-logs/message-tracking.md) in Exchange Servers
-- In [Enhanced message trace reports](message-trace-modern-eac.md) in Exchange Online
-- By inspecting [message headers](https://support.microsoft.com/en-us/office/view-internet-message-headers-in-outlook-cd039382-dc6e-4264-ac74-c048563d212c) from Outlook
-
-For example, you can locate Network Message ID with the help of the following message headers in Exchange Online:
-
-- `X-MS-Exchange-Organization-Network-Message-Id`, or
-
-- `X-MS-Exchange-CrossTenant-Network-Message-Id`
-
-You can also use the following command to locate the Network Message ID in Exchange Online:
-
-`Get-MessageTrace -MessageTraceId 2bbad36aa4674c7ba82f4b307fff549f -SenderAddress john@contoso.com -StartDate 06/13/2022 -EndDate 06/15/2022 | Get-MessageTraceDetail`
-
-> [!NOTE]
-> The parameter **-MessageTraceId** is a parameter corresponding to the **Network Message ID** parameter. Hence, it's effectively an alternative and/or an equivalent to the **Network Message ID** parameter.
-
-In the above example, the **Get-MessageTrace** cmdlet retrieves trace information for messages that have the Message Trace ID **2bbad36aa4674c7ba82f4b307fff549f** and that are sent by john@contoso.com between June 13, 2022, and June 15, 2022. This cmdlet then pipelines the retrieved trace information to the **Get-MessageTraceDetail** cmdlet.
+Network Message ID is a unique message ID value that prevails across copies of the message that may be created due to bifurcation, and across the message transport process. It's very dynamic wherein its value differs for even a copy of the message's specific instance. Therefore, each copied version of the instance will have a different Network Message ID.
 
 The differences between Network Message ID and Message ID are described in the following table:
 
@@ -153,6 +130,29 @@ The differences between Network Message ID and Message ID are described in the f
 |---------|---------|
 |ID of an email message's specific instance   |ID of the email message        |
 |Unique and persists across copies of the message that may be created due to bifurcation        |   Constant for the lifetime of the message      |
+
+Network Message ID enables you to locate a specific instance of a message in Exchange online; for example, when analyzing message threads to access a specific message and its specific instance, you can use the Network Message ID.
+
+For more information about Network Message ID, see:
+
+- [Message tracking logs](../../../ExchangeServer/mail-flow/transport-logs/message-tracking.md) in Exchange Servers
+- [Enhanced message trace reports](message-trace-modern-eac.md) in Exchange Online
+- [Message headers](https://support.microsoft.com/en-us/office/view-internet-message-headers-in-outlook-cd039382-dc6e-4264-ac74-c048563d212c) from Outlook
+
+The following message header syntaxes enable you to trace a Network Message ID value in Exchange Online:
+
+- `X-MS-Exchange-Organization-Network-Message-Id`, or
+
+- `X-MS-Exchange-CrossTenant-Network-Message-Id`
+
+The following command enables you to trace a Network Message ID value in Exchange Online:
+
+`Get-MessageTrace -MessageTraceId 2bbad36aa4674c7ba82f4b307fff549f -SenderAddress john@contoso.com -StartDate 06/13/2022 -EndDate 06/15/2022 | Get-MessageTraceDetail`
+
+> [!NOTE]
+> **-MessageTraceId** is a parameter that's an alternative (and is effectively similar) to  **Network Message ID**.
+
+The **Get-MessageTrace** cmdlet retrieves trace information for messages that have the Message Trace ID **2bbad36aa4674c7ba82f4b307fff549f** and that are sent by john@contoso.com between June 13, 2022, and June 15, 2022. This cmdlet then pipes the retrieved trace information to the **Get-MessageTraceDetail** cmdlet.
 
 #### Direction
 
