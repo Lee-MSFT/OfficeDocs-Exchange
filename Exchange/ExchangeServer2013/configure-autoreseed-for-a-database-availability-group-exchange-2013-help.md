@@ -43,7 +43,7 @@ For additional management tasks related to DAGs, see [Managing database availabi
 
 ## Step 1: Configure the root paths for databases and volumes
 
-The first step involves configuring the root directories for the databases (*AutoDagDatabasesRootFolderPath*) and volumes (*AutoDagVolumesRootFolderPath*) used by the DAG. The defaults are C:\\ExchangeDatabases, and C:\\ExchangeVolumes, respectively. You can omit this step if you're using the default paths.
+The first step involves configuring the root directories for the databases (_AutoDagDatabasesRootFolderPath_) and volumes (_AutoDagVolumesRootFolderPath_) used by the DAG. The defaults are C:\\ExchangeDatabases, and C:\\ExchangeVolumes, respectively. You can omit this step if you're using the default paths.
 
 This example illustrates how to configure the root path for the databases.
 
@@ -65,11 +65,11 @@ To verify that you've successfully configured the root paths for databases and v
 Get-DatabaseAvailabilityGroup DAG1 | Format-List *auto*
 ```
 
-The output for *AutoDagDatabasesRootFolderPath* and *AutoDagVolumesRootFolderPath* should reflect the configured paths.
+The output for _AutoDagDatabasesRootFolderPath_ and _AutoDagVolumesRootFolderPath_ should reflect the configured paths.
 
 ## Step 2: Configure the number of databases per volume
 
-Next, configure the number of databases per volume (*AutoDagDatabaseCopiesPerVolume*) for the DAG.
+Next, configure the number of databases per volume (_AutoDagDatabaseCopiesPerVolume_) for the DAG.
 
 This example illustrates how to configure this AutoReseed setting for a DAG configured with 4 databases per volume.
 
@@ -85,7 +85,7 @@ To verify that you've successfully configured the number of databases per volume
 Get-DatabaseAvailabilityGroup DAG1 | Format-List *auto*
 ```
 
-The output for *AutoDagDatabaseCopiesPerVolume* should reflect the configured value.
+The output for _AutoDagDatabaseCopiesPerVolume_ should reflect the configured value.
 
 ## Step 3: Create the root directories for databases and volumes
 
@@ -180,9 +180,9 @@ The mounted volume should appear in the mount point list.
 
 Next, create two directories underneath the folders you created in Step 5, one for each database and one for each of the database's log stream that will be stored on the same volume. You must use the following format for your directory structure:
 
-C:\\\<*DatabaseFolderName*\>\\*DatabaseName*\\\<*DatabaseName*\>.db
+C:\\\<_DatabaseFolderName_\>\\_DatabaseName_\\\<_DatabaseName_\>.db
 
-C:\\\<*DatabaseFolderName*\>\\*DatabaseName*\\\<*DatabaseName*\>.log
+C:\\\<_DatabaseFolderName_\>\\_DatabaseName_\\\<_DatabaseName_\>.log
 
 This example illustrates how to create directories for 4 databases that will be stored on Volume 1:
 

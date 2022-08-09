@@ -35,25 +35,15 @@ It's challenging to create guidelines for deploying telephony networks. They can
 Before you engage a Unified Messaging specialist, you should be able to answer key questions that they'll ask. Having the answers to the following questions will help make the conversation between you and the UM specialist productive:
 
 - How many existing telephone or voice mail users, or both, are in your organization?
-
 - How many users do you intend to provide with Unified Messaging?
-
 - Which PBX or PBXs do you intend to use for integration with Unified Messaging?
-
 - How many PBXs does your organization have? Specify the vendors, types (circuit- or IP-based), models, and firmware versions.
-
 - Are the PBXs networked, and are they centralized or located in multiple locations?
-
 - What voice mail system or systems does your organization currently use? Specify the vendors, types, models, and firmware versions.
-
 - How are the voice mail systems integrated into your PBXs (Analog, T1/E1, PRI, Digital set emulation, VoIP, other)?
-
 - Are you currently using voice networking?
-
 - What type of fax system or systems does your organization use, and does the fax system or systems support inbound fax routing to Exchange?
-
 - Does your organization use automated attendants?
-
 - Do you need support for phone-only users, that is, users who won't have email access?
 
 ## Supported VoIP gateways
@@ -69,22 +59,20 @@ For details about configuring supported VoIP gateways, IP PBXs, and PBXs see [Co
 Interoperability was verified for the following VoIP gateway vendors:
 
 - AudioCodes
-
 - Dialogic
-
 - The following table shows the VoIP gateway vendor, the VoIP gateway model, and the protocols that are supported by each model.
 
 |Vendor|Model|Supported protocols|
 |---|---|---|
-|AudioCodes|MediaPack 114/8 FXO| Analog with In-Band DTMF  <br/>  Analog with SMDI|
-|AudioCodes|Mediant 1000| Analog with In-Band DTMF  <br/>  Analog with SMDI  <br/>  BRI Q.SIG  <br/>  T1/E1 Q.SIG  <br/>  IP-to-IP|
-|AudioCodes|Mediant 2000| T1/E1 CAS  <br/>  T1/E1 Q.SIG  <br/>  IP-to-IP|
+|AudioCodes|MediaPack 114/8 FXO|Analog with In-Band DTMF <br/><br/> Analog with SMDI|
+|AudioCodes|Mediant 1000|Analog with In-Band DTMF <br/><br/> Analog with SMDI <br/><br/> BRI Q.SIG <br/><br/> T1/E1 Q.SIG <br/><br/> IP-to-IP|
+|AudioCodes|Mediant 2000|T1/E1 CAS <br/><br/> T1/E1 Q.SIG <br/><br/> IP-to-IP|
 |Dialogic|DMG1000PBXDNIW|Digital Set Emulation|
-|Dialogic|DMG1000LSW| Analog with In-Band DTMF  <br/>  Analog with SMDI|
-|Dialogic|DMG2000| T1 CAS  <br/>  T1/E1 Q.SIG|
-|Dialogic|DMG3000| BRI Q.SIG|
-|NET|VX1200| T1 Q.SIG|
-|Sonus|SBC 1000/2000 2.2.1 or later| TDM Signaling (ISDN): AT&T 4ESS/5ESS, Nortel DMS- 100, Euro ISDN (ETSI 300-102), QSIG, NTT InsNet (Japan), ANSI National ISDN-2 (NI-2)  <br/>  TDM Signaling (CAS): T1 CAS (E&M, Loop start); E1 CAS (R2)|
+|Dialogic|DMG1000LSW|Analog with In-Band DTMF <br/><br/> Analog with SMDI|
+|Dialogic|DMG2000|T1 CAS <br/><br/> T1/E1 Q.SIG|
+|Dialogic|DMG3000|BRI Q.SIG|
+|NET|VX1200|T1 Q.SIG|
+|Sonus|SBC 1000/2000 2.2.1 or later|TDM Signaling (ISDN): AT&T 4ESS/5ESS, Nortel DMS- 100, Euro ISDN (ETSI 300-102), QSIG, NTT InsNet (Japan), ANSI National ISDN-2 (NI-2) <br/><br/> TDM Signaling (CAS): T1 CAS (E&M, Loop start); E1 CAS (R2)|
 |Quintum|Tenor DX Series|T1 Q.SIG|
 
 ## Supported PBXs when using an AudioCodes VoIP gateway
@@ -93,26 +81,26 @@ The following table shows the PBXs that are supported using AudioCodes VoIP gate
 
 |PBX manufacturer|PBX model/type|AudioCodes model "x" - replace with 4 or 8 per need "y" - replace with 1, 2, 4, 8 or 16 per need|
 |---|---|---|
-|Alcatel|OmniPCX 4400| MediaPack 11x/FXO/AC/SIP-0  <br/>  Mediant2000/ySpans/SIP|
-|Aastra|M1000, M2000| Mediant2000/ySpans/SIP|
-|Avaya|Definity G3| MediaPack 11x/FXO/AC/SIP-0  <br/>  Mediant1000/ySpans/SIP  <br/>  Mediant2000/ySpans/SIP|
-|Avaya|Magix/Merlin| MediaPack 11x/FXO/AC/SIP-0|
-|Avaya|S8300| MediaPack 11x/FXO/AC/SIP-0  <br/>  Mediant1000/ySpans/SIP  <br/>  Mediant2000/ySpans/SIP|
-|Avaya|S8700| MediaPack 11x/FXO/AC/SIP-0  <br/>  Mediant1000/ySpans/SIP  <br/>  Mediant2000/ySpans/SIP|
-|Avaya|IP Office| MediaPack 11x/FXO/AC/SIP-0  <br/>  Mediant2000/ySpans/SIP|
-|Cisco|CallManager 4.x| Mediant1000/IP-to-IP  <br/>  Mediant2000/IP-to-IP|
-|NEC|Electra Elite| MediaPack 11x/FXO/AC/SIP-0|
-|NEC|NEAX2400| MediaPack 11x/FXO/AC/SIP-0  <br/>  Mediant2000/ySpans/SIP/RS232|
-|NeXspan|S| MediaPack 11x/FXO/AC/SIP-0|
-|Nortel|Communication Server-1000M, 1000S, 1000E| Mediant1000/ySpans/SIP  <br/>  Mediant2000/ySpans/SIP|
-|Nortel|Meridian 11c, 51c, 61c, 81c| Mediant1000/ySpans/SIP  <br/>  Mediant2000/ySpans/SIP|
-|Panasonic|KX-TES824, KX-TEA308| MediaPack 11x/FXO/AC/SIP-0|
-|Panasonic|KX-TDA30, KX-TDA100, KX-TDA200, KX-TDA600| MediaPack 11x/FXO/AC/SIP-0|
-|Shortel|IP Telephony System| MediaPack 11x/FXO/AC/SIP-0|
-|Siemens|HiCom 150E| MediaPack 11x/FXO/AC/SIP-0|
-|Siemens|HiPath 3550| MediaPack 11x/FXO/AC/SIP-0|
-|Siemens|HiPath 4000| MediaPack 11x/FXO/AC/SIP-0  <br/>  Mediant1000/ySpans/SIP  <br/>  Mediant2000/ySpans/SIP|
-|Tadiran Telecom|Coral Flexicom, Coral IPX| MediaPack 11x/FXO/AC/SIP-0  <br/>  Mediant1000/ySpans/SIP  <br/>  Mediant2000/ySpans/SIP|
+|Alcatel|OmniPCX 4400|MediaPack 11x/FXO/AC/SIP-0 <br/><br/> Mediant2000/ySpans/SIP|
+|Aastra|M1000, M2000|Mediant2000/ySpans/SIP|
+|Avaya|Definity G3|MediaPack 11x/FXO/AC/SIP-0 <br/><br/> Mediant1000/ySpans/SIP <br/><br/> Mediant2000/ySpans/SIP|
+|Avaya|Magix/Merlin|MediaPack 11x/FXO/AC/SIP-0|
+|Avaya|S8300|MediaPack 11x/FXO/AC/SIP-0 <br/><br/> Mediant1000/ySpans/SIP <br/><br/> Mediant2000/ySpans/SIP|
+|Avaya|S8700|MediaPack 11x/FXO/AC/SIP-0 <br/><br/> Mediant1000/ySpans/SIP <br/><br/> Mediant2000/ySpans/SIP|
+|Avaya|IP Office|MediaPack 11x/FXO/AC/SIP-0 <br/><br/> Mediant2000/ySpans/SIP|
+|Cisco|CallManager 4.x|Mediant1000/IP-to-IP <br/><br/> Mediant2000/IP-to-IP|
+|NEC|Electra Elite|MediaPack 11x/FXO/AC/SIP-0|
+|NEC|NEAX2400|MediaPack 11x/FXO/AC/SIP-0 <br/><br/> Mediant2000/ySpans/SIP/RS232|
+|NeXspan|S|MediaPack 11x/FXO/AC/SIP-0|
+|Nortel|Communication Server-1000M, 1000S, 1000E|Mediant1000/ySpans/SIP <br/><br/> Mediant2000/ySpans/SIP|
+|Nortel|Meridian 11c, 51c, 61c, 81c|Mediant1000/ySpans/SIP <br/><br/> Mediant2000/ySpans/SIP|
+|Panasonic|KX-TES824, KX-TEA308|MediaPack 11x/FXO/AC/SIP-0|
+|Panasonic|KX-TDA30, KX-TDA100, KX-TDA200, KX-TDA600|MediaPack 11x/FXO/AC/SIP-0|
+|Shortel|IP Telephony System|MediaPack 11x/FXO/AC/SIP-0|
+|Siemens|HiCom 150E|MediaPack 11x/FXO/AC/SIP-0|
+|Siemens|HiPath 3550|MediaPack 11x/FXO/AC/SIP-0|
+|Siemens|HiPath 4000|MediaPack 11x/FXO/AC/SIP-0 <br/><br/> Mediant1000/ySpans/SIP <br/><br/> Mediant2000/ySpans/SIP|
+|Tadiran Telecom|Coral Flexicom, Coral IPX|MediaPack 11x/FXO/AC/SIP-0 <br/><br/> Mediant1000/ySpans/SIP <br/><br/> Mediant2000/ySpans/SIP|
 
 ## Supported PBXs when using a Dialogic VoIP gateway
 
@@ -124,73 +112,61 @@ The following table shows the PBXs that are supported with the low-density Dialo
 
 |PBX manufacturer|PBX model/type|DMG model and additional signaling|
 |---|---|---|
-|Aastra|Aastra MD110 (formerly Ericsson MD110)|DMG1008LSW  <br/> Analog connectivity using the MD110 RS232 protocol|
+|Aastra|Aastra MD110 (formerly Ericsson MD110)|DMG1008LSW <br/><br/> Analog connectivity using the MD110 RS232 protocol|
 |Alcatel|Omni PCX 4400|DMG1008LSW|
 |Avaya|Definity G3 S8100, S8300, S8700, and S8710 (Communications Mgr SW V2.0 or later versions)|DMG1008DNIW|
-|Intercom||DMG1008LSW  <br/> Analog connectivity using SMDI serial protocol|
+|Intercom||DMG1008LSW <br/><br/> Analog connectivity using SMDI serial protocol|
 |Mitel|SX-200D, SX-200 Light, SX-2000 Light, SX-2000 S, SX-2000 VS, SX-200 ICP|DMG1008MTLDNIW|
 |NEC|2000, 2400, 2400 IPX|DMG1008DNIW|
-|Nortel|Meridian 1 - Option 11, 21, 21A, 51, 61, 71, and 81  <br/> Meridian SL1 - Generic X11, Release 15 or later versions  <br/> Nortel Communication Server - 1000M, 1000S, 1000E with V3.0 or later versions|DMG1008DNIW|
-|Nortel|SL 100|DMG1008LSW  <br/> Analog connectivity using SMDI serial protocol|
+|Nortel|Meridian 1 - Option 11, 21, 21A, 51, 61, 71, and 81 <br/><br/> Meridian SL1 - Generic X11, Release 15 or later versions <br/><br/> Nortel Communication Server - 1000M, 1000S, 1000E with V3.0 or later versions|DMG1008DNIW|
+|Nortel|SL 100|DMG1008LSW <br/><br/> Analog connectivity using SMDI serial protocol|
 |Siemens|HiCom 300E CS|DMG1008DNIW|
-|Siemens|HiCom 300E (European)|DMG1008LSW  <br/> Analog connectivity using Inband DTMF signaling|
-|Siemens/ROLM|8000 (SW release 80003 or later versions)          9000 (All versions)  <br/> 9751 (All versions of SW release 9005)  <br/> 9751 (SW release 9006.4 or later versions)|DMG1008RLMDNIW|
+|Siemens|HiCom 300E (European)|DMG1008LSW <br/><br/> Analog connectivity using Inband DTMF signaling|
+|Siemens/ROLM|8000 (SW release 80003 or later versions) <br/><br/> 9000 (All versions) <br/><br/> 9751 (All versions of SW release 9005) <br/><br/> 9751 (SW release 9006.4 or later versions)|DMG1008RLMDNIW|
 |Siemens|HiPath 4000|DMG1008LSW|
 |Toshiba|CTX (SW version AR1ME021.00)|DMG1008LSW|
-|Others|Various|DMG1008LSW  <br/> Analog connectivity using either Inband DTMF or SMDI|
+|Others|Various|DMG1008LSW <br/><br/> Analog connectivity using either Inband DTMF or SMDI|
 
 ### PBXs supported when using a DMG 2000 series Media Gateway
 
 The following table shows the PBXs that are supported with the T1/E1 Dialogic Media Gateway (DMG2000). The DMG2000 gateway, which comes in single span (DMG2030DTIQ), dual span (DMG2060DTIQ), or quad span (DMG2120DTIQ) densities, supports the following protocols:
 
 - T1 CAS
-
 - T1 Q.SIG
-
 - E1 Q.SIG
-
 - T1 NI-2
-
 - T1 5ESS
-
 - T1 DMS100
 
 If Channel Associated Signaling (CAS) signaling is used, supplemental signaling (RS232 SMDI, MD110, MCI protocols, or Inband DTMF signaling) is required. If Q.SIG signaling is used, the PBX must support the supplemental services that are associated with calling and called party information and the call transfer capabilities required by Unified Messaging.
 
 |PBX manufacturer|PBX model/type|Required software version|Protocol and additional signaling|
 |---|---|---|---|
-|Alcatel|Omni PCX 4400|Version 3.2.712.5|T1 Q.SIG  <br/> E1 Q.SIG|
+|Alcatel|Omni PCX 4400|Version 3.2.712.5|T1 Q.SIG <br/><br/> E1 Q.SIG|
 |Avaya|Definity G3|Version 3 or later|T1 CAS|
-|Avaya|S8500|Manager SW V2.0 or later versions|T1 CAS  <br/> T1 Q.SIG  <br/> E1 Q.SIG|
+|Avaya|S8500|Manager SW V2.0 or later versions|T1 CAS <br/><br/> T1 Q.SIG <br/><br/> E1 Q.SIG|
 |Ericsson|MD110|Release MX1 TSW R2A (BC13)|E1 Q.SIG|
 |Intercom|||CAS (w/ SMDI serial protocol)|
 |NEC|2400 IMX|Release 5200 Dec. 92 1b or later versions|CAS (w/ MCI serial protocol)|
 |NEC|2400 IPX|R17 Release 03.46.001|T1 Q.SIG|
-|Nortel|Meridian 1 - Option 11|Release 15 or later versions, and options 19 and 46 are required|T1 Q.SIG  <br/> E1 Q.SIG|
-|Nortel|Communication Server 1000|Version 2121, Release 4|T1 Q.SIG  <br/> E1 Q.SIG|
+|Nortel|Meridian 1 - Option 11|Release 15 or later versions, and options 19 and 46 are required|T1 Q.SIG <br/><br/> E1 Q.SIG|
+|Nortel|Communication Server 1000|Version 2121, Release 4|T1 Q.SIG <br/><br/> E1 Q.SIG|
 |Siemens|HiCom 300E CS|Release 9006.4 or later (Note: North American software load only)|T1 CAS|
-|Siemens|HiPath 4000|V2 SMR 9 SMPO|T1 Q.SIG  <br/> E1 Q.SIG|
-|Mitel|SX-2000 S, SX-2000 VS|LW 34|T1 Q.SIG  <br/> E1 Q.SIG|
-|Mitel|3300|Version 5.1.4.8|T1 Q.SIG  <br/> E1 Q.SIG|
+|Siemens|HiPath 4000|V2 SMR 9 SMPO|T1 Q.SIG <br/><br/> E1 Q.SIG|
+|Mitel|SX-2000 S, SX-2000 VS|LW 34|T1 Q.SIG <br/><br/> E1 Q.SIG|
+|Mitel|3300|Version 5.1.4.8|T1 Q.SIG <br/><br/> E1 Q.SIG|
 
 ### PBXs supported when using a DMG4008BRI series Media Gateway
 
 The DMG4000 series Media Gateway comes with several TDM interface options. The DMG4008BRI supports 4-port/8-channel densities and supports the following protocols:
 
 - ISDN BRI Q.SIG
-
 - ETSI-DSS1 (Euro ISDN)
-
 - NET 3 (Belgium)
-
 - VN3 (France)
-
 - 1TR6 (Germany)
-
 - INS-64 (Japan)
-
 - 5ESS Custom (North America - AT&T)
-
 - National ISDN (NI1 - North America)
 
 The following table shows the PBXs that are supported using a Dialogic 4000 Media Gateway Series (DMG4008).
@@ -224,7 +200,6 @@ IP PBXs using SIP media gateways are also supported by Unified Messaging. The fo
 For on-premises and hybrid deployments, Exchange Unified Messaging can be deployed together with Microsoft Office Communications Server 2007 R2, Microsoft Lync Server 2010 or Lync Server 2013 to provide voice messaging, Instant Messaging (IM), enhanced user presence, audio-video conferencing, and an integrated email and messaging experience for users in your organization. For more information, see:
 
 - [Deploying Exchange 2013 UM and Lync Server overview](deploying-exchange-2013-um-and-lync-server-overview-exchange-2013-help.md)
-
 - [Microsoft Lync Server 2013](/lyncserver/microsoft-lync-server-2013)
 
 To find out more about the Microsoft Unified Communications Open Interoperability Program for enterprise telephony infrastructure, including finding qualified SIP PSTN gateways and IP PBXs and the process for telephony infrastructure vendors to join and participate in the program, see [Microsoft Unified Communications Open Interoperability Program](/SkypeForBusiness/lync-cert/qualified-lync-apps).

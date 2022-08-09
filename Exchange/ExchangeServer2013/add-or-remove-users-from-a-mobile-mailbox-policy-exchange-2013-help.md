@@ -106,7 +106,7 @@ Get-Mailbox | where {$_.CustomAttribute1 -match "Manager"} | Set-CASMailbox -act
 ```
 
 > [!NOTE]
-> You can substitute <CODE>CustomAttribute1</CODE> for any of the properties on the <STRONG>Get-Mailbox</STRONG> object. To view the full list, type: <CODE>Get-Mailbox username |fl</CODE>.
+> You can substitute `CustomAttribute1` for any of the properties on the **Get-Mailbox** object. To view the full list, type: `Get-Mailbox username |fl`.
 
 **How do you know this worked?**
 

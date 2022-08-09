@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Admins can learn how to change role assignments in Exchange Server.
 ---
 
 # Change a role assignment
@@ -23,7 +24,6 @@ Management role assignments assign a management role to a role assignee. By chan
 For more information about management role scopes and assignments in Microsoft Exchange Server 2013, see the following topics:
 
 - [Understanding management role assignments](understanding-management-role-assignments-exchange-2013-help.md)
-
 - [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md)
 
 Looking for other management tasks related to role assignments? Check out [Advanced permissions](advanced-permissions-exchange-2013-help.md).
@@ -175,9 +175,9 @@ For detailed syntax and parameter information, see [Set-ManagementRoleAssignment
 
 To change exclusive recipient or exclusive configuration scopes, you can use the procedures provided in the "Use the Shell to change a recipient filter scope on a role assignment," "Use the Shell to change the server filter or list-based configuration scope on a role assignment," and "Use the Shell to change the database filter or list-based configuration scope on a role assignment" sections earlier in this topic. The only difference is that when you change an exclusive scope, you must specify the following exclusive parameters depending on whether you're changing an exclusive recipient scope or an exclusive configuration scope:
 
-- **Exclusive recipient scopes**: Use the *ExclusiveRecipientWriteScope* parameter instead of the *CustomRecipientWriteScope* parameter.
+- **Exclusive recipient scopes**: Use the _ExclusiveRecipientWriteScope_ parameter instead of the _CustomRecipientWriteScope_ parameter.
 
-- **Exclusive server and database configuration scopes**: Use the *ExclusiveConfigWriteScope* parameter instead of the *CustomConfigWriteScope* parameter.
+- **Exclusive server and database configuration scopes**: Use the _ExclusiveConfigWriteScope_ parameter instead of the _CustomConfigWriteScope_ parameter.
 
 As with regular recipient and configuration scopes, if you add or change an exclusive scope, any previously defined recipient or configuration scopes are replaced.
 

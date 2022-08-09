@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Admins can learn how to apply sharing policies to mailboxes in Exchange 2013.
 ---
 
 # Apply a sharing policy to mailboxes
@@ -26,7 +27,7 @@ To learn more about federated sharing, see [Sharing](sharing-exchange-2013-help.
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the *Recipient Provisioning Permissions* entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the _Recipient Provisioning Permissions_ entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - A sharing policy must exist. For details, see [Create a sharing policy](create-a-sharing-policy-exchange-2013-help.md).
 
@@ -86,7 +87,7 @@ To verify that you have successfully applied the sharing policy to a user mailbo
 
 - In the EAC, navigate to **Recipients** \> **Mailboxes**, and then select the mailbox to which you applied the sharing policy. Click **Edit** ![Edit icon.](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon"), click **mailbox features**, and then confirm that the correct sharing policy appears in the **Sharing policy** list.
 
-- Run the following Shell command to verify the sharing policy was assigned to a user mailbox. Verify that the correct sharing policy is listed in the *SharingPolicy* parameter.
+- Run the following Shell command to verify the sharing policy was assigned to a user mailbox. Verify that the correct sharing policy is listed in the _SharingPolicy_ parameter.
 
   ```powershell
   Get-Mailbox <user name> | format-list

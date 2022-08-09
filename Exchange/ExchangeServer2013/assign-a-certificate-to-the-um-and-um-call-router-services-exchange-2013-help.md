@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013, Exchange Server 2016_
 
-You can use the EAC or the Shell to assign a self-signed, internal public key infrastructure (PKI), or third-party commercial certificate for specific Exchange services. When you use the **New-ExchangeCertificate** cmdlet to assign the certificate to Exchange services with the *Services* parameter, you're prompted to assign the certificate to Exchange services. If you use the EAC to create a certificate, the New Exchange Certificate wizard won't prompt you to assign the certificate to Exchange services. You need to edit the properties of the certificate and assign the certificate by selecting which services you want to assign it to.
+You can use the EAC or the Shell to assign a self-signed, internal public key infrastructure (PKI), or third-party commercial certificate for specific Exchange services. When you use the **New-ExchangeCertificate** cmdlet to assign the certificate to Exchange services with the _Services_ parameter, you're prompted to assign the certificate to Exchange services. If you use the EAC to create a certificate, the New Exchange Certificate wizard won't prompt you to assign the certificate to Exchange services. You need to edit the properties of the certificate and assign the certificate by selecting which services you want to assign it to.
 
 Different services have different certificate requirements. For example, some services may only require a server name in the **Subject Name** or **Subject Alternative Name** boxes of a certificate and other services may require a fully qualified domain name (FQDN). Make sure that the certificate name can support the uses required by the services you enable it for.
 
@@ -45,7 +45,7 @@ For additional management tasks related to managing certificates for Unified Mes
 
 2. In the list view, select the certificate that you want to assign to the Unified Messaging and UM Call Router services, and then click **Edit** ![Edit icon.](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 
-3. On the *\<Certificate name\>* page, select **Services**, and then select **UM** and **UM call router**.
+3. On the _\<Certificate name\>_ page, select **Services**, and then select **UM** and **UM call router**.
 
 4. Click **Save**.
 

@@ -19,49 +19,16 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-A *queue* is a temporary holding location for messages that are waiting to enter the next stage of processing. Each queue represents a logical set of messages that a transport server processes in a specific order.
+A _queue_ is a temporary holding location for messages that are waiting to enter the next stage of processing. Each queue represents a logical set of messages that a transport server processes in a specific order.
 
 Like the previous versions of Exchange, Microsoft Exchange Server 2013 uses an Extensible Storage Engine (ESE) database for queue message storage. All the different queues are stored in a single ESE database. Queues exist only on Mailbox servers or on Edge Transport servers.
 
 The location of the queue database and the queue database transaction logs is controlled by keys in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` XML application configuration file. This file is associated with the Microsoft Exchange Transport service. The following table explains each key in more detail.
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><em>QueueDatabasePath</em></p></td>
-<td><p>This key specifies the location of the queue database files. The files are:</p>
-<ul>
-<li><p>Mail.que</p></li>
-<li><p>Trn.chk</p></li>
-</ul>
-<p>The default location is <code>%ExchangeInstallPath%TransportRoles\data\Queue</code>.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>QueueDatabaseLoggingPath</em></p></td>
-<td><p>This key specifies the location of the queue database transaction log files. The files are:</p>
-<ul>
-<li><p>Trn.log</p></li>
-<li><p>Trntmp.log</p></li>
-<li><p>Trn<em>nnn</em>.log</p></li>
-<li><p>Trnres00001.jrs</p></li>
-<li><p>Trnres00002.jrs</p></li>
-<li><p>Temp.edb</p></li>
-</ul>
-<p>Temp.edb is used to verify the queue database schema when the Microsoft Exchange Transport service starts. Although Temp.edb isn't a transaction log file, it's kept in the same location as the transaction log files.</p>
-<p>The default location is <code>%ExchangeInstallPath%TransportRoles\data\Queue</code>.</p></td>
-</tr>
-</tbody>
-</table>
+|Key|Description|
+|---|---|
+|_QueueDatabasePath_|This key specifies the location of the queue database files. The files are: <ul><li>Mail.que</li><li>Trn.chk</li></ul><p>The default location is `%ExchangeInstallPath%TransportRoles\data\Queue`.|
+|_QueueDatabaseLoggingPath_|This key specifies the location of the queue database transaction log files. The files are: <ul><li>Trn.log</li><li>Trntmp.log</li><li>Trn_nnn_.log</li><li>Trnres00001.jrs</li><li>Trnres00002.jrs</li><li>Temp.edb</li></ul><p>Temp.edb is used to verify the queue database schema when the Microsoft Exchange Transport service starts. Although Temp.edb isn't a transaction log file, it's kept in the same location as the transaction log files. <br/><br/> The default location is `%ExchangeInstallPath%TransportRoles\data\Queue`.|
 
 ## What do you need to know before you begin?
 
@@ -76,9 +43,7 @@ The location of the queue database and the queue database transaction logs is co
 - If the target folder for the queue database or transaction logs doesn't exist, it will be created for you if the parent folder has the following permissions applied to it:
 
   - Network Service: Full Control
-
   - System: Full Control
-
   - Administrators: Full Control
 
 - Any customized per-server settings you make in Exchange XML application configuration files, for example, web.config files on Client Access servers or the EdgeTransport.exe.config file on Mailbox servers, will be overwritten when you install an Exchange Cumulative Update (CU). Make sure that you save this information so you can easily reconfigure your server after the install. Reconfigure these settings after you install an Exchange CU.
@@ -169,7 +134,7 @@ Use the following procedure to move the existing queue database and transaction 
 
 6. Move the existing database files Mail.que and Trn.chk from the original location to the new location.
 
-7. Move the existing transaction log files Trn.log, Trntmp.log, Trn*nnnnn*.log, Trnres00001.jrs, Trnres00002.jrs, and Temp.edb from the old location to the new location.
+7. Move the existing transaction log files Trn.log, Trntmp.log, Trn_nnnnn_.log, Trnres00001.jrs, Trnres00002.jrs, and Temp.edb from the old location to the new location.
 
 8. Start the Microsoft Exchange Transport service by running the following command:
 
@@ -182,9 +147,7 @@ Use the following procedure to move the existing queue database and transaction 
 To verify that you successfully moved the existing queue database and transaction logs to the new location, take the following steps:
 
 1. Verify the queue database files Mail.que and Trn.chk exist at the new location.
-
 2. Verify the transaction log files Trn.log, Trntmp.log, Trnres00001.jrs, Trnres00002.jrs, and Temp.edb files exist at the new location.
-
 3. Verify there are no queue database or transaction log files at the original location.
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
