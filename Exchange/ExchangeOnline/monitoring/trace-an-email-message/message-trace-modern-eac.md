@@ -47,7 +47,7 @@ From here, you can start a new default trace by clicking **Start a trace**. This
 
 - **Autosaved queries**: The last 10 most recently run queries. This list makes it simple to pick up where you left off.
 
-Also on this page is a **Downloadable reports** section for the requests you've submitted, and the reports themselves when they're are available for download.
+Also on this page is a **Downloadable reports** section for the requests you've submitted, and the reports themselves when they're available for download.
 
 ## Options for a new message trace
 
@@ -122,7 +122,7 @@ When you use **Message ID** to filter the results, be sure to include the full s
 
 #### Network Message ID
 
-Network Message ID is a unique message ID value that prevails across copies of the message that may be created due to bifurcation, and across the message transport process. It's very dynamic wherein its value differs for even a copy of the message's specific instance. Therefore, each copied version of the instance will have a different **Network Message ID** value.
+Network Message ID is a unique message ID value that prevails across copies of the message that may be created due to bifurcation, and across the message transport process. It's dynamic wherein its value differs for even a copy of the message's specific instance. Therefore, each copied version of the instance will have a different **Network Message ID** value.
 
 The differences between Network Message ID and Message ID are described in the following table:
 
@@ -143,7 +143,7 @@ To trace the **Network Message ID** value and use it to trace specific messages 
 
 - `X-MS-Exchange-CrossTenant-Network-Message-Id`
 
-The above message headers will enable you trace the **Network Message ID** value. You can use this value to further retrieve specific messages, for example, messages with the traced **Network Message ID** value which were sent by a specific sender, addressed to a specific recipient, or sent during a specified time period.
+The above message headers will enable you to trace the **Network Message ID** value. You can use this value to further retrieve specific messages, for example, messages with the traced **Network Message ID** value which were sent by a specific sender, addressed to a specific recipient, or sent during a specified time period.
 
 You can also use the following command to trace the **Network Message ID** value:
 
